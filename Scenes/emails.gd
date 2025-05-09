@@ -1,6 +1,6 @@
 extends Node2D
 
-var filename = "email.tsv"
+var filename = "emails.tsv"
 var data_header = []
 var emails = []
 
@@ -18,23 +18,35 @@ func read_email_file():
 		print("emails.gd: opened file " + filename)
 		while not file.eof_reached():
 			var line = file.get_line()
-			var item_dict: Dictionary = {}
+			#print (line)
+			#var data = line.split("\t")
+			#print (data)
+			#continue
 			# Get the first line which contains table headers
 			if count == 0:
-				data_header = line.split()
+				data_header = line.split("\t")
+				#print (data_header)
 				count += 1
 			# Process data lines	
 			else:
-				var linelist = line.split()
+				var linelist = line.split("\t")
 				var e: Dictionary = {}
 				var c = 0
+					
 				# Create a new dictionary for each line
 				for header in data_header:
 					e[header] = linelist[c] 
+					# Detect and store neutral
+					if c == 8 and linelist[c]:
+						print(linelist[c])
+						var neutral = []
+						neutral = linelist[c].split(",")
+						print(neutral[5])
 					c+=1
 				emails.append(e)
 		file.close()
 		#print ("items.gd: ", items)
+		#print ("emails.gd: ", emails )
 		print ("emails.gd: data loaded successfully " + filename)
 	else:
 		print("emails.gd: Error: could not open file")
