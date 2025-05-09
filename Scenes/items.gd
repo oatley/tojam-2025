@@ -37,7 +37,7 @@ func read_item_file():
 				var c = 0
 				# Add to general categories
 				if linelist[0] and linelist[0] not in item_general_categories:
-					print("items.gd: add to gen cat", linelist[0])
+					#print("items.gd: add to gen cat", linelist[0])
 					item_general_categories.append(linelist[0])
 				# Add to specific categories
 				if linelist[1] and linelist[1] not in item_specific_categories:
