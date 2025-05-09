@@ -5,6 +5,7 @@ var items = []
 var filename = "test.csv" 
 var item_general_categories = []
 var item_specific_categories = []
+var isReady = false
 
 func _ready():
 	read_item_file()
@@ -17,6 +18,7 @@ func _ready():
 # item = {cat: "toy", ...}
 func read_item_file():
 	var file
+	var count = 0
 	# Open file for reading
 	file = FileAccess.open(filename, FileAccess.READ)
 	if file:	
@@ -24,7 +26,6 @@ func read_item_file():
 		while not file.eof_reached():
 			var line = file.get_line()
 			var item_dict: Dictionary = {}
-			var count = 0
 			# Get the first line which contains table headers
 			if count == 0:
 				data_header = line.split(",")
@@ -35,10 +36,11 @@ func read_item_file():
 				var i: Dictionary = {}
 				var c = 0
 				# Add to general categories
-				if linelist[0] not in item_general_categories:
+				if linelist[0] and linelist[0] not in item_general_categories:
+					print("items.gd: add to gen cat", linelist[0])
 					item_general_categories.append(linelist[0])
 				# Add to specific categories
-				if linelist[1] not in item_specific_categories:
+				if linelist[1] and linelist[1] not in item_specific_categories:
 					item_specific_categories.append(linelist[1])
 				# Create a new dictionary for each line
 				for header in data_header:
@@ -46,7 +48,13 @@ func read_item_file():
 					c+=1
 				items.append(i)
 		file.close()
-		#print (items)
+		#print ("items.gd: ", items)
 		print ("items.gd: data loaded successfully " + filename)
 	else:
 		print("items.gd: Error: could not open file")
+
+
+func _on_ready() -> void:
+	isReady = true
+	print("items.gd: ready")
+	pass # Replace with function body.
