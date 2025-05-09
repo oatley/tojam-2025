@@ -9,7 +9,7 @@ var isReady = false
 
 func _ready():
 	read_item_file()
-	get_parent().tabs = item_general_categories
+	#get_parent().tab_names = item_general_categories # seems like parent can read
 	pass
 
 # Read the data from the items csv file and make a list of items

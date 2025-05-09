@@ -1,8 +1,12 @@
 extends Node2D
 
-var tabs = []
+# Tabs
+var tab_names = []
 var tab_nodes = []
 var tab = preload("res://Scenes/tab.tscn")
+
+# Items
+var items = []
 
 
 #func _process (delta):
@@ -14,16 +18,21 @@ var tab = preload("res://Scenes/tab.tscn")
 
 
 func _ready():
-	tabs = $Items.item_general_categories
-	print ("store.gd", tabs)
-	create_tabs()
+	tab_names = $Items.item_general_categories
+	#create_tabs() # Changing to a drop down
 	pass
+
+func create_items():
+	items = $Items.items
+	
+	pass
+
+
 
 func create_tabs():
 	var posx = 0 # +150 min
 	var posy = 0 
-	for category in tabs:
-		
+	for category in tab_names:
 		var instance = tab.instantiate()
 		instance.name = category
 		instance.change_text(category)
