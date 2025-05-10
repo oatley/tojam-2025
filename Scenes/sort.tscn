@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b13mr6v3x6sdm"]
+[gd_scene load_steps=4 format=3 uid="uid://b13mr6v3x6sdm"]
 
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="1_m7yk1"]
 [ext_resource type="Theme" uid="uid://dgugqxyyff85u" path="res://Fonts/new_theme.tres" id="1_oc3pf"]
+[ext_resource type="Script" uid="uid://dhcusj6snq4sn" path="res://Scenes/sort.gd" id="3_ldrn2"]
 
 [node name="Sort" type="Node2D"]
+script = ExtResource("3_ldrn2")
 
 [node name="MenuButton" type="MenuButton" parent="."]
 offset_right = 91.0
@@ -17,3 +19,5 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_m7yk1")
 theme_override_font_sizes/font_size = 30
 text = "Sort"
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

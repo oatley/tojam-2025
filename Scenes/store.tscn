@@ -13,7 +13,7 @@ texture = ExtResource("3_h38w0")
 centered = false
 
 [node name="Sort" parent="." instance=ExtResource("5_w6sp3")]
-position = Vector2(607, 127)
+position = Vector2(599, 124)
 
 [node name="Items" parent="." instance=ExtResource("1_c3i85")]
 

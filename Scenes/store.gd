@@ -1,6 +1,10 @@
 extends Node2D
 
+#Time
+var time = 0
+
 # Tabs
+var current_tab = "All"
 var tab_names = []
 var tab_nodes = []
 var tab_scene = preload("res://Scenes/tab_container.tscn") # Old Scene
@@ -16,20 +20,45 @@ func print_debug_text():
 	print("store.gd: general categories ", tab_names)
 	pass
 	
+func _process (delta):
+	time += delta
+	if time > 1:
+		if $Sort.tab != current_tab:
+			unhide_tab($Sort.tab)
+		time = 0
+	
 func _ready():
 	tab_names = $Items.item_general_categories
+	tab_names.append("All")
 	items = $Items.items
-	
 	fill_sort_menu()
 	#test_create_tabs()
 	create_tabs()
+	hide_tabs()
+	$Sort.store = self
 	pass
 
+
+
+# By default hide all tabs except ALL
 func hide_tabs():
-	
+	for tab in tab_nodes:
+		print(tab, " ", tab.name)
+		if tab.name == "All":
+			tab.visible = true
+		else:
+			tab.visible = false
 	pass
 
-#
+# Unhide specific tab
+func unhide_tab(tab_to_unhide):
+	for tab in tab_nodes:
+		print(tab, " ", tab.name)
+		if tab.name == tab_to_unhide:
+			tab.visible = true
+		else:
+			tab.visible = false
+	pass
 
 # Create a new tab_container for each tab_names
 func create_tabs():
@@ -62,7 +91,8 @@ func create_items(tab, tab_container):
 		#print ("item: ",item)
 		#print("gen cat: ", item["General Category"], " tab value: ", tab)
 		if item["General Category"] == tab or tab == "All":
-			var item_title = item["Specific Category"] # placeholder for "Store Name"
+			var item_title = item["General Category"] + "-" + item["Specific Category"]  # placeholder for "Store Name"
+			#var item_title = item["Specific Category"] # placeholder for "Store Name"
 			var item_desc = item["Art Notes"] # placeholder for "Store Description"
 			if count == 0:
 				item1_title = item_title
@@ -70,9 +100,6 @@ func create_items(tab, tab_container):
 			elif count == 1:
 				item2_title = item_title
 				item2_body = item_desc
-			#shop_item_instance.change_title(count, item_title)
-			#shop_item_instance.change_title(count, tab)
-			#shop_item_instance.change_body(count, item_desc)
 			#print("store.gd: change text on button ", item_title)
 			if count == 1:
 				var shop_item_instance = shop_item_scene.instantiate()
