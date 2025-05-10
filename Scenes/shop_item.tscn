@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkiei1ii7e1hk"]
+[gd_scene load_steps=7 format=3 uid="uid://bkiei1ii7e1hk"]
 
 [ext_resource type="Texture2D" uid="uid://dgipy1bl6iynu" path="res://Assets/storeBlock2_Off.png" id="1_ewy27"]
+[ext_resource type="Script" uid="uid://dphgxrhklxbg8" path="res://Scenes/shop_item.gd" id="1_wmysf"]
 [ext_resource type="Texture2D" uid="uid://h4l3vn87ya5j" path="res://Assets/storeBlock2_On.png" id="2_idtay"]
 [ext_resource type="Texture2D" uid="uid://bbveiqg1ydlc" path="res://Assets/storeBlock2_Over.png" id="3_asrp6"]
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="4_asrp6"]
@@ -9,6 +10,7 @@
 [node name="ShopItems" type="BoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_wmysf")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2

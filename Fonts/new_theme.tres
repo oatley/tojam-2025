@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgugqxyyff85u"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dgugqxyyff85u"]
 
 [ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="1_8slnm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8slnm"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
 
 [resource]
 PopupMenu/colors/font_color = Color(0.87451, 0.0980392, 0.87451, 1)
 PopupMenu/font_sizes/font_size = 30
 PopupMenu/font_sizes/title_font_size = 30
 PopupMenu/fonts/font = ExtResource("1_8slnm")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_8slnm")

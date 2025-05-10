@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk34vxo0hctcr"]
+[gd_scene load_steps=5 format=3 uid="uid://dk34vxo0hctcr"]
 
 [ext_resource type="PackedScene" uid="uid://b7svf5v4n3r5n" path="res://Scenes/items.tscn" id="1_c3i85"]
 [ext_resource type="Script" uid="uid://bhynsbuk61gc8" path="res://Scenes/store.gd" id="1_lkwxl"]
 [ext_resource type="Texture2D" uid="uid://6ppehshicyo7" path="res://Assets/tojam25_layoutFile2.png" id="3_h38w0"]
-[ext_resource type="PackedScene" uid="uid://cl074wb2publg" path="res://Scenes/tab_container.tscn" id="4_j65sj"]
 [ext_resource type="PackedScene" uid="uid://b13mr6v3x6sdm" path="res://Scenes/sort.tscn" id="5_w6sp3"]
 
 [node name="Store" type="Node2D"]
@@ -14,9 +13,16 @@ texture = ExtResource("3_h38w0")
 centered = false
 
 [node name="Sort" parent="." instance=ExtResource("5_w6sp3")]
-position = Vector2(61, 38)
+position = Vector2(607, 127)
 
 [node name="Items" parent="." instance=ExtResource("1_c3i85")]
 
-[node name="ScrollContainer" parent="." instance=ExtResource("4_j65sj")]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 2
 offset_left = 7.0
+offset_top = 210.0
+offset_right = 1432.0
+offset_bottom = 1072.0
+size_flags_vertical = 3
+vertical_scroll_mode = 2
