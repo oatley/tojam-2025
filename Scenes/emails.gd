@@ -3,6 +3,11 @@ extends Node2D
 var filename = "emails.tsv"
 var data_header = []
 var emails = []
+var emails_level_1 = []
+
+var level = 1
+
+
 
 func _ready():
 	read_email_file()
@@ -18,10 +23,6 @@ func read_email_file():
 		print("emails.gd: opened file " + filename)
 		while not file.eof_reached():
 			var line = file.get_line()
-			#print (line)
-			#var data = line.split("\t")
-			#print (data)
-			#continue
 			# Get the first line which contains table headers
 			if count == 0:
 				data_header = line.split("\t")
@@ -45,6 +46,11 @@ func read_email_file():
 					c+=1
 				emails.append(e)
 		file.close()
+		for email in emails:
+			if email["Level"] == "1":
+				emails_level_1.append(email)
+		print(emails_level_1)
+		print("emails.gd: number of emails in level 1: -> ", len(emails_level_1))
 		#print ("items.gd: ", items)
 		#print ("emails.gd: ", emails )
 		print ("emails.gd: data loaded successfully " + filename)

@@ -12,6 +12,8 @@ var tab_scene = preload("res://Scenes/tab_container.tscn") # Old Scene
 # Shop Items
 var shop_item_scene = preload("res://Scenes/shop_item.tscn")
 
+var level = 1
+
 # Items
 var items = []
 
@@ -24,16 +26,24 @@ func _process (delta):
 	time += delta
 	if time > 1:
 		if $Sort.tab != current_tab:
-			unhide_tab($Sort.tab)
+			print("changing tabs to", $Sort.tab)
+			if $Sort.tab == "All":
+				hide_tabs()
+			else:
+				unhide_tab($Sort.tab)
 		time = 0
 	
 func _ready():
-	tab_names = $Items.item_general_categories
+	tab_names = []
 	tab_names.append("All")
+	tab_names = tab_names + $Items.item_general_categories
+	
 	items = $Items.items
 	fill_sort_menu()
 	#test_create_tabs()
 	create_tabs()
+	#hide_tabs()
+	unhide_tab("Electronics")
 	hide_tabs()
 	$Sort.store = self
 	pass
@@ -84,16 +94,19 @@ func create_items(tab, tab_container):
 	var item1_body
 	var item2_body
 	for item in items:
-		if not item["General Category"] or not item["Specific Category"] or not item["Art Notes"]:
+		if not item["First Level Added"]or not item["General Category"] or not item["Specific Category"] or not item["Art Notes"]:
 			continue
+		if item["First Level Added"] != "1":
+			continue
+			
 		if count > 1:
 			count = 0
 		#print ("item: ",item)
 		#print("gen cat: ", item["General Category"], " tab value: ", tab)
 		if item["General Category"] == tab or tab == "All":
-			var item_title = item["General Category"] + "-" + item["Specific Category"]  # placeholder for "Store Name"
+			var item_title = item["General Category"] + "-" + item["Store Name"] # placeholder for "Store Name"
 			#var item_title = item["Specific Category"] # placeholder for "Store Name"
-			var item_desc = item["Art Notes"] # placeholder for "Store Description"
+			var item_desc = item["Store Description"] # placeholder for "Store Description"
 			if count == 0:
 				item1_title = item_title
 				item1_body = item_desc

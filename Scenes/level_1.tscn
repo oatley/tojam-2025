@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv0gl7qa5pe2e"]
+
+[ext_resource type="PackedScene" uid="uid://dk34vxo0hctcr" path="res://Scenes/store.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://c7543ie3r3cy8" path="res://Scenes/email_screen_level_1.tscn" id="2_8ffim"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Store" parent="." instance=ExtResource("1_vk57k")]
+
+[node name="EmailScreenLevel1" parent="." instance=ExtResource("2_8ffim")]
