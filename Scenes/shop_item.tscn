@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkiei1ii7e1hk"]
+[gd_scene load_steps=6 format=3 uid="uid://bkiei1ii7e1hk"]
 
 [ext_resource type="Texture2D" uid="uid://dgipy1bl6iynu" path="res://Assets/storeBlock2_Off.png" id="1_ewy27"]
 [ext_resource type="Texture2D" uid="uid://h4l3vn87ya5j" path="res://Assets/storeBlock2_On.png" id="2_idtay"]
 [ext_resource type="Texture2D" uid="uid://bbveiqg1ydlc" path="res://Assets/storeBlock2_Over.png" id="3_asrp6"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="4_asrp6"]
+[ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="5_tga60"]
 
-[node name="BoxContainer" type="BoxContainer"]
+[node name="ShopItems" type="BoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -14,8 +16,62 @@ texture_normal = ExtResource("1_ewy27")
 texture_pressed = ExtResource("2_idtay")
 texture_hover = ExtResource("3_asrp6")
 
+[node name="LabelTitle" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 10.0
+offset_right = 694.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_asrp6")
+theme_override_font_sizes/font_size = 17
+text = "Duca di Saragnano Alchymia Primitivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="LabelBody" type="Label" parent="TextureButton"]
+offset_left = 279.0
+offset_top = 50.0
+offset_right = 683.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tga60")
+text = "Made in a ripe, jammy style, this bold Prim serves up notions of cherry preserves supported by velvety tannins. Pair with game stews or spice-crusted steaks.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
 [node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 2
 texture_normal = ExtResource("1_ewy27")
 texture_pressed = ExtResource("2_idtay")
 texture_hover = ExtResource("3_asrp6")
+
+[node name="LabelTitle" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 10.0
+offset_right = 694.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_asrp6")
+theme_override_font_sizes/font_size = 17
+text = "Duca di Saragnano Alchymia Primitivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="LabelBody" type="Label" parent="TextureButton2"]
+offset_left = 279.0
+offset_top = 50.0
+offset_right = 683.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tga60")
+text = "Made in a ripe, jammy style, this bold Prim serves up notions of cherry preserves supported by velvety tannins. Pair with game stews or spice-crusted steaks.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3

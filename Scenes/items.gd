@@ -49,7 +49,10 @@ func read_item_file():
 				items.append(i)
 		file.close()
 		#print ("items.gd: ", items)
+		print  ("items.gd: general categories ", item_general_categories)
+		print  ("items.gd: specific categories ", item_specific_categories)
 		print ("items.gd: data loaded successfully " + filename)
+		
 	else:
 		print("items.gd: Error: could not open file")
 

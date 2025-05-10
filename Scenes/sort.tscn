@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13mr6v3x6sdm"]
+
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="1_m7yk1"]
+[ext_resource type="Theme" uid="uid://dgugqxyyff85u" path="res://Fonts/new_theme.tres" id="1_oc3pf"]
+
+[node name="Sort" type="Node2D"]
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_right = 91.0
+offset_bottom = 31.0
+theme = ExtResource("1_oc3pf")
+theme_override_colors/font_hover_pressed_color = Color(0, 0.415686, 0.705882, 1)
+theme_override_colors/font_hover_color = Color(0, 0.415686, 0.705882, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_m7yk1")
+theme_override_font_sizes/font_size = 30
+text = "Sort"
+item_count = 1
+popup/item_0/text = "All"
+popup/item_0/checked = true
+popup/item_0/id = 0

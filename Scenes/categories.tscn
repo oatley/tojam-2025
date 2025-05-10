@@ -1,10 +1,15 @@
-[gd_scene format=3 uid="uid://ghhd307dbf73"]
+[gd_scene load_steps=2 format=3 uid="uid://ghhd307dbf73"]
+
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="1_a63yd"]
 
 [node name="Categories" type="Node2D"]
 
 [node name="MenuButton" type="MenuButton" parent="."]
 offset_right = 91.0
 offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_a63yd")
+theme_override_font_sizes/font_size = 30
 text = "Categories"
 item_count = 1
 popup/item_0/text = "All"
