@@ -1,51 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkiei1ii7e1hk"]
+[gd_scene load_steps=4 format=3 uid="uid://bkiei1ii7e1hk"]
 
-[ext_resource type="Script" uid="uid://dphgxrhklxbg8" path="res://Scenes/shop_item.gd" id="1_wmysf"]
-[ext_resource type="Texture2D" uid="uid://b3idwkwplivkv" path="res://Assets/storeBlock_Off.png" id="2_b8rhe"]
-[ext_resource type="Texture2D" uid="uid://cxjk22klxhs6w" path="res://Assets/storeBlock_On.png" id="3_idtay"]
-[ext_resource type="Texture2D" uid="uid://x8y5sfcsolq0" path="res://Assets/storeBlock_Over.png" id="4_asrp6"]
+[ext_resource type="Texture2D" uid="uid://dgipy1bl6iynu" path="res://Assets/storeBlock2_Off.png" id="1_ewy27"]
+[ext_resource type="Texture2D" uid="uid://h4l3vn87ya5j" path="res://Assets/storeBlock2_On.png" id="2_idtay"]
+[ext_resource type="Texture2D" uid="uid://bbveiqg1ydlc" path="res://Assets/storeBlock2_Over.png" id="3_asrp6"]
 
-[node name="ShopItem" type="Node2D"]
-script = ExtResource("1_wmysf")
-
-[node name="StoreBlockOff" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(160, 288)
-texture = ExtResource("2_b8rhe")
-
-[node name="StoreBlockOn" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(160, 288)
-texture = ExtResource("3_idtay")
-
-[node name="StoreBlockOver" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(160, 288)
-texture = ExtResource("4_asrp6")
-
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="BoxContainer" type="BoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("2_b8rhe")
-texture_pressed = ExtResource("3_idtay")
-texture_hover = ExtResource("4_asrp6")
 
-[node name="Label" type="Label" parent="TextureButton"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 339.0
-offset_right = 309.0
-offset_bottom = 368.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Duca di Saragnano Alchymia Primitivo"
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_ewy27")
+texture_pressed = ExtResource("2_idtay")
+texture_hover = ExtResource("3_asrp6")
 
-[node name="Label2" type="Label" parent="TextureButton"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 376.0
-offset_right = 301.0
-offset_bottom = 556.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Made in a ripe, jammy style, this bold Prim serves up notions of cherry preserves supported by velvety tannins. Pair with game stews or spice-crusted steaks.
-"
-autowrap_mode = 3
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_ewy27")
+texture_pressed = ExtResource("2_idtay")
+texture_hover = ExtResource("3_asrp6")

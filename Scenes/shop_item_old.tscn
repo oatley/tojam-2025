@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://otsyipgctplu"]
+
+[ext_resource type="Script" uid="uid://dphgxrhklxbg8" path="res://Scenes/shop_item.gd" id="1_fcu8o"]
+[ext_resource type="Texture2D" uid="uid://b3idwkwplivkv" path="res://Assets/storeBlock_Off.png" id="2_toaee"]
+[ext_resource type="Texture2D" uid="uid://cxjk22klxhs6w" path="res://Assets/storeBlock_On.png" id="3_nkrwe"]
+[ext_resource type="Texture2D" uid="uid://x8y5sfcsolq0" path="res://Assets/storeBlock_Over.png" id="4_mkcfs"]
+
+[node name="ShopItem" type="Node2D"]
+script = ExtResource("1_fcu8o")
+
+[node name="StoreBlockOff" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(160, 288)
+texture = ExtResource("2_toaee")
+
+[node name="StoreBlockOn" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(160, 288)
+texture = ExtResource("3_nkrwe")
+
+[node name="StoreBlockOver" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(160, 288)
+texture = ExtResource("4_mkcfs")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_toaee")
+texture_pressed = ExtResource("3_nkrwe")
+texture_hover = ExtResource("4_mkcfs")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 339.0
+offset_right = 309.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Duca di Saragnano Alchymia Primitivo"
+
+[node name="Label2" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 376.0
+offset_right = 301.0
+offset_bottom = 556.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Made in a ripe, jammy style, this bold Prim serves up notions of cherry preserves supported by velvety tannins. Pair with game stews or spice-crusted steaks.
+"
+autowrap_mode = 3
