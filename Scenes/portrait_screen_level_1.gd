@@ -1,9 +1,20 @@
 extends Node2D
 
-var faceSuperSmile = load("res://Assets/tojam25_photoFace1.png")
-var faceSmile = load("res://Assets/tojam25_photoFace2.png")
-var faceSad = load("res://Assets/tojam25_photoFace3.png")
+var happy_face = load("res://Assets/tojam25_photoFace1.png")
+var neutral_face = load("res://Assets/tojam25_photoFace2.png")
+var sad_face = load("res://Assets/tojam25_photoFace3.png")
 
-func clare_face(face):
-	$TextureRectPortrait/TextureRectClareFace.texture = face
+func change_face(sender, face):
+	var current_face
+	if face == "happy":
+		current_face = happy_face
+	elif face == "neutral":
+		current_face = neutral_face
+	else:
+		current_face = sad_face
+	if sender == "Claire":
+		
+		$TextureRectPortrait/TextureRectClareFace.texture = current_face
+		$TextureRectPortrait/TextureRectClareFace.visible = true
+		
 	

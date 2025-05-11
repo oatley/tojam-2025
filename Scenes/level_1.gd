@@ -29,11 +29,29 @@ func _process (delta):
 		time = 0
 
 
+func unhide_portrait():
+	$StoreLevel1.visible = false
+	$Objectives.visible = false
+	$Cart.visible = false
+	$EmailScreenLevel1.visible = false
+	$PortraitScreenLevel1.visible = true
+
+# email outcomes may be a list or dict
+func game_over_level_1(email_outcomes):
+	for sender in email_outcomes.keys():
+		print(sender)
+		print (email_outcomes[sender])
+		$PortraitScreenLevel1.change_face(sender, email_outcomes[sender])
+	unhide_portrait()
+	
 	
 func checkout():
 	print ("level_1.gd: checkout started")
 	var level = int(current_level)-1
+	var email_outcomes = {}
 	if selected_cart_item_id:
+		# who
+		var sender_name = $EmailScreenLevel1/Emails.emails_level_1[level]["Sender Name"]
 		# Happy
 		var happy_item = $EmailScreenLevel1/Emails.emails_level_1[level]["Happy Item"]
 		# Neutral
@@ -41,11 +59,12 @@ func checkout():
 		
 		# Check score
 		if selected_cart_item_id == happy_item:
-			print("YOUWIN HAPPY")
+			email_outcomes[sender_name] = "happy"
 		elif selected_cart_item_id in neutral_items:
-			print("Not bad not bad")
+			email_outcomes[sender_name] = "neutral"
 		else:
-			print(";-------------------------------;")
+			email_outcomes[sender_name] = "sad"
+		game_over_level_1(email_outcomes)
 	
 	
 func fill_cart():
