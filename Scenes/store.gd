@@ -18,15 +18,15 @@ var level = 1
 var items = []
 
 func print_debug_text():
-	print("store.gd: items ", items)
-	print("store.gd: general categories ", tab_names)
+	#print("store.gd: items ", items)
+	#print("store.gd: general categories ", tab_names)
 	pass
 	
 func _process (delta):
 	time += delta
-	if time > 1:
+	if time > 0.25:
 		if $Sort.tab != current_tab:
-			print("changing tabs to", $Sort.tab)
+			#print("changing tabs to", $Sort.tab)
 			if $Sort.tab == "All":
 				hide_tabs()
 			else:
@@ -53,7 +53,7 @@ func _ready():
 # By default hide all tabs except ALL
 func hide_tabs():
 	for tab in tab_nodes:
-		print(tab, " ", tab.name)
+		#print(tab, " ", tab.name)
 		if tab.name == "All":
 			tab.visible = true
 		else:
@@ -63,7 +63,7 @@ func hide_tabs():
 # Unhide specific tab
 func unhide_tab(tab_to_unhide):
 	for tab in tab_nodes:
-		print(tab, " ", tab.name)
+		#print(tab, " ", tab.name)
 		if tab.name == tab_to_unhide:
 			tab.visible = true
 		else:
@@ -116,7 +116,7 @@ func create_items(tab, tab_container):
 			#print("store.gd: change text on button ", item_title)
 			if count == 1:
 				var shop_item_instance = shop_item_scene.instantiate()
-				print ("store.gd: adding shop item", shop_item_instance, "------", item1_body, "-----", item2_body)
+				#print ("store.gd: adding shop item", shop_item_instance, "------", item1_body, "-----", item2_body)
 				tab_container.add_child(shop_item_instance)
 				shop_item_instance.change_title(0, item1_title)
 				shop_item_instance.change_body(0, item1_body)
@@ -131,9 +131,9 @@ func create_items(tab, tab_container):
 
 # Fill the sort menu with tab_names to filter the tabs
 func fill_sort_menu():
-	print (tab_names)
+	#print (tab_names)
 	for tab in tab_names:
-		print (tab)
+		#print (tab)
 		$Sort/MenuButton.get_popup().add_item(str(tab))
 	pass
 

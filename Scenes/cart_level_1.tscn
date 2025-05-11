@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgxv7ppfg301g"]
+
+[ext_resource type="Script" uid="uid://ijar8jwckbv7" path="res://Scenes/cart_level_1.gd" id="1_7il4u"]
+[ext_resource type="Texture2D" uid="uid://6ppehshicyo7" path="res://Assets/tojam25_layoutFile2.png" id="1_dkt1s"]
+[ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="2_iuiks"]
+[ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="3_fp4bk"]
+[ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="4_7il4u"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="5_fp4bk"]
+
+[node name="Cart" type="Node2D"]
+script = ExtResource("1_7il4u")
+
+[node name="Tojam25LayoutFile2" type="Sprite2D" parent="."]
+texture = ExtResource("1_dkt1s")
+centered = false
+
+[node name="TextureRectCheckout" type="TextureRect" parent="."]
+offset_left = 1560.0
+offset_top = 251.0
+offset_right = 1800.0
+offset_bottom = 491.0
+
+[node name="TextureButtonCheckout" type="TextureButton" parent="."]
+offset_left = 1520.0
+offset_top = 524.0
+offset_right = 1840.0
+offset_bottom = 620.0
+texture_normal = ExtResource("2_iuiks")
+texture_pressed = ExtResource("3_fp4bk")
+texture_hover = ExtResource("4_7il4u")
+
+[node name="LabelGiftIdeasTitle" type="Label" parent="TextureButtonCheckout"]
+z_index = 1
+offset_left = 90.0
+offset_top = 24.0
+offset_right = 287.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_fp4bk")
+theme_override_font_sizes/font_size = 32
+text = "Checkout"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[connection signal="pressed" from="TextureButtonCheckout" to="." method="_on_texture_button_checkout_pressed"]

@@ -9,6 +9,7 @@ var email_to = "to@email.com"
 var email_subject = "subject"
 var email_body = "email body"
 var email_name = "sender_name"
+var email_gift_ideas = []
 
 # Control
 var is_email_open = false
@@ -26,6 +27,8 @@ func load_level_1_emails(email_number=0):
 	email_subject = $Emails.emails_level_1[email_number]["Subject Line"]
 	email_body = $Emails.emails_level_1[email_number]["Email Body"]
 	email_name = $Emails.emails_level_1[email_number]["Sender Name"]
+	email_gift_ideas = $Emails.emails_level_1[email_number]["Email Tags"].split(",")
+	#print("email_screen_level_1: gift ideas ", $Emails.emails_level_1[email_number]["Email Tags"])
 	email_fill(email_from, email_to, email_subject, email_body)
 	contact_fill(email_name, email_subject)
 
