@@ -48,8 +48,6 @@ func _ready():
 	$Sort.store = self
 	pass
 
-
-
 # By default hide all tabs except ALL
 func hide_tabs():
 	for tab in tab_nodes:
@@ -84,15 +82,37 @@ func create_tabs():
 		create_items(tab, tab_container_instance)
 	pass
 
+	# TO DO
+	# - (DONE) Make sure "Colour 1" and "Colour 2" are all filled in (dolls)
+	# - (DONE) Make sure "Art Asset" leads to file name or put a unique thing in
+	# - (DO THIS IN STORE??) ImageItem contains a dictionary of all colours and resources
+	#	(DONE) This allows you to make an item in store and set everything
+	#	(DONE) requires updating "Art Asset", making dict, 
+	# - (DONE) Fix second item in "shop_item" node, you didn't update it
+
 # Generate item objects inside tabs
 func create_items(tab, tab_container):
 	var count = 0 # put two items in each shop_items_box
 	#var shop_item_instance = shop_item_scene.instantiate()
 	#tab_container.add_child(shop_item_instance)
+	
+	# Item 1
 	var item1_title
-	var item2_title
 	var item1_body
+	var item1_image_base
+	var item1_image_col1
+	var item1_image_col2
+	var item1_id
+	
+	# Item 2
+	var item2_title
 	var item2_body
+	var item2_image_base
+	var item2_image_col1 # "Colour 1"
+	var item2_image_col2 # "Colour 2"
+	var item2_id
+	
+	#print("store: items", items[3])
 	for item in items:
 		if not item["First Level Added"]or not item["General Category"] or not item["Specific Category"] or not item["Art Notes"]:
 			continue
@@ -103,31 +123,48 @@ func create_items(tab, tab_container):
 			count = 0
 		#print ("item: ",item)
 		#print("gen cat: ", item["General Category"], " tab value: ", tab)
+		
 		if item["General Category"] == tab or tab == "All":
-			var item_title = item["General Category"] + "-" + item["Store Name"] # placeholder for "Store Name"
+			var item_title = item["Store Name"] # placeholder for "Store Name"
 			#var item_title = item["Specific Category"] # placeholder for "Store Name"
 			var item_desc = item["Store Description"] # placeholder for "Store Description"
 			if count == 0:
 				item1_title = item_title
 				item1_body = item_desc
+				item1_image_base = item["Art Asset"]
+				item1_image_col1 = item["Colour 1"]
+				item1_image_col2 = item["Colour 2"]
+				item1_id = item["Item ID"]
 			elif count == 1:
 				item2_title = item_title
 				item2_body = item_desc
+				item2_image_base = item["Art Asset"]
+				item2_image_col1 = item["Colour 1"]
+				item2_image_col2 = item["Colour 2"]
+				item2_id = item["Item ID"]
 			#print("store.gd: change text on button ", item_title)
 			if count == 1:
+				#print ("store.gd: item", item)
 				var shop_item_instance = shop_item_scene.instantiate()
 				#print ("store.gd: adding shop item", shop_item_instance, "------", item1_body, "-----", item2_body)
 				tab_container.add_child(shop_item_instance)
+				
+				# item1 
 				shop_item_instance.change_title(0, item1_title)
 				shop_item_instance.change_body(0, item1_body)
+				# button, art_asset, col1, col2
+				shop_item_instance.change_image(0, item1_image_base, item1_image_col1, item1_image_col2)
+				shop_item_instance.change_id(0, item1_id)
+				
+				# item2
 				shop_item_instance.change_title(1, item2_title)
 				shop_item_instance.change_body(1, item2_body)
+				# button, art_asset, col1, col2
+				shop_item_instance.change_image(1, item2_image_base, item2_image_col1, item2_image_col2)
+				shop_item_instance.change_id(1, item2_id)
+				
 			count += 1
 	pass
-
-
-
-
 
 # Fill the sort menu with tab_names to filter the tabs
 func fill_sort_menu():

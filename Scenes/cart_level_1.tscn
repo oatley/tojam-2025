@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgxv7ppfg301g"]
+[gd_scene load_steps=8 format=3 uid="uid://dgxv7ppfg301g"]
 
 [ext_resource type="Script" uid="uid://ijar8jwckbv7" path="res://Scenes/cart_level_1.gd" id="1_7il4u"]
 [ext_resource type="Texture2D" uid="uid://6ppehshicyo7" path="res://Assets/tojam25_layoutFile2.png" id="1_dkt1s"]
 [ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="2_iuiks"]
 [ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="3_fp4bk"]
+[ext_resource type="PackedScene" uid="uid://l5m6lq5yl8kk" path="res://Scenes/image_item.tscn" id="3_uh2fc"]
 [ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="4_7il4u"]
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="5_fp4bk"]
 
@@ -15,11 +16,9 @@ visible = false
 texture = ExtResource("1_dkt1s")
 centered = false
 
-[node name="TextureRectCheckout" type="TextureRect" parent="."]
-offset_left = 1560.0
-offset_top = 251.0
-offset_right = 1800.0
-offset_bottom = 491.0
+[node name="ImageItem" parent="." instance=ExtResource("3_uh2fc")]
+z_index = 1
+position = Vector2(1565, 257)
 
 [node name="TextureButtonCheckout" type="TextureButton" parent="."]
 offset_left = 1520.0
@@ -32,6 +31,7 @@ texture_hover = ExtResource("4_7il4u")
 
 [node name="LabelGiftIdeasTitle" type="Label" parent="TextureButtonCheckout"]
 z_index = 1
+layout_mode = 0
 offset_left = 90.0
 offset_top = 24.0
 offset_right = 287.0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://t4nlv6ihf6yf"
+path="res://.godot/imported/Serene Shopping Serenade V2.wav-75019a9cbd8d7f780f0ac78d13702ba7.sample"
+
+[deps]
+
+source_file="res://Audio/Serene Shopping Serenade V2.wav"
+dest_files=["res://.godot/imported/Serene Shopping Serenade V2.wav-75019a9cbd8d7f780f0ac78d13702ba7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

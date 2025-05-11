@@ -13,6 +13,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_8xp6f")
 
 [node name="TextureRectClareFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 937.0
 offset_top = 237.0
 offset_right = 1065.0
