@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://fa81qyn4fftf"]
+
+[ext_resource type="Script" uid="uid://bhynsbuk61gc8" path="res://Scenes/store.gd" id="1_ods15"]
+[ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_0be02"]
+[ext_resource type="PackedScene" uid="uid://b13mr6v3x6sdm" path="res://Scenes/sort.tscn" id="3_qh7a2"]
+[ext_resource type="PackedScene" uid="uid://b7svf5v4n3r5n" path="res://Scenes/items.tscn" id="4_d5agj"]
+[ext_resource type="Script" uid="uid://j7v062f6v1bh" path="res://Scenes/scroll_container.gd" id="5_38qrv"]
+
+[node name="StoreLevel1" type="Node2D"]
+script = ExtResource("1_ods15")
+
+[node name="Tojam25StoreLayout" type="Sprite2D" parent="."]
+position = Vector2(958, 539)
+texture = ExtResource("2_0be02")
+
+[node name="Sort" parent="." instance=ExtResource("3_qh7a2")]
+position = Vector2(599, 124)
+
+[node name="Items" parent="." instance=ExtResource("4_d5agj")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 2
+offset_left = 7.0
+offset_top = 210.0
+offset_right = 1431.0
+offset_bottom = 1072.0
+vertical_scroll_mode = 2
+script = ExtResource("5_38qrv")

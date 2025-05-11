@@ -1,17 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7543ie3r3cy8"]
+[gd_scene load_steps=9 format=3 uid="uid://c7543ie3r3cy8"]
 
 [ext_resource type="Texture2D" uid="uid://bs86oj71qxjtc" path="res://Assets/tojam25_emailLayout.png" id="1_7vn2l"]
 [ext_resource type="Script" uid="uid://bvcx84t22joiu" path="res://Scenes/email_screen_level_1.gd" id="1_sxa53"]
 [ext_resource type="Texture2D" uid="uid://inkkumrsb03e" path="res://Assets/tojam25_emailLayoutRef.png" id="2_2a6tj"]
 [ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="2_3utcs"]
 [ext_resource type="PackedScene" uid="uid://1dopslnjq3w3" path="res://Scenes/emails.tscn" id="4_3utcs"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="4_e58vh"]
+[ext_resource type="Texture2D" uid="uid://cxslwohbvnbaf" path="res://Assets/tojam25_emailBlock2_Off.png" id="5_mx1w0"]
+[ext_resource type="Texture2D" uid="uid://c7tcb3800ym5s" path="res://Assets/tojam25_profilePic_claire1.png" id="6_uja8v"]
 
 [node name="EmailScreenLevel1" type="Node2D"]
+visibility_layer = 4
 script = ExtResource("1_sxa53")
 
 [node name="EmailLayout" type="Sprite2D" parent="."]
+visibility_layer = 16
 texture = ExtResource("1_7vn2l")
 centered = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EmailLayout"]
+offset_left = 128.0
+offset_top = 211.0
+offset_right = 650.0
+offset_bottom = 951.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EmailLayout/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureButtonContact1" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e58vh")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3utcs")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Tojam25EmailBlock2Off" type="Sprite2D" parent="EmailLayout"]
+position = Vector2(361.625, 291)
+scale = Vector2(0.833482, 1)
+texture = ExtResource("5_mx1w0")
 
 [node name="LabelFrom" type="Label" parent="EmailLayout"]
 offset_left = 813.0
@@ -46,22 +96,43 @@ theme_override_font_sizes/font_size = 32
 text = "Place"
 vertical_alignment = 1
 
+[node name="LabelBody3" type="RichTextLabel" parent="EmailLayout"]
+visible = false
+offset_left = 687.0
+offset_top = 477.0
+offset_right = 1775.0
+offset_bottom = 940.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3utcs")
+theme_override_fonts/bold_font = ExtResource("4_e58vh")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+text = "Test"
+vertical_alignment = 1
+justification_flags = 35
+
 [node name="LabelBody" type="Label" parent="EmailLayout"]
 offset_left = 685.0
 offset_top = 475.0
 offset_right = 1768.0
 offset_bottom = 930.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("2_3utcs")
 theme_override_font_sizes/font_size = 32
 text = "Place"
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextureButtonExit" type="TextureButton" parent="EmailLayout"]
 offset_left = 1718.0
 offset_top = 129.0
 offset_right = 1791.0
 offset_bottom = 201.0
+
+[node name="Tojam25ProfilePicClaire1" type="Sprite2D" parent="EmailLayout"]
+position = Vector2(207, 293)
+texture = ExtResource("6_uja8v")
 
 [node name="Tojam25EmailLayoutRef" type="Sprite2D" parent="."]
 visible = false

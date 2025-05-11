@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkiei1ii7e1hk"]
+[gd_scene load_steps=10 format=3 uid="uid://bkiei1ii7e1hk"]
 
 [ext_resource type="Texture2D" uid="uid://dgipy1bl6iynu" path="res://Assets/storeBlock2_Off.png" id="1_ewy27"]
 [ext_resource type="Script" uid="uid://dphgxrhklxbg8" path="res://Scenes/shop_item.gd" id="1_wmysf"]
+[ext_resource type="Texture2D" uid="uid://biy77wy2b2qkc" path="res://Assets/tojam25_storeBlock_Off.png" id="2_i6hie"]
 [ext_resource type="Texture2D" uid="uid://h4l3vn87ya5j" path="res://Assets/storeBlock2_On.png" id="2_idtay"]
 [ext_resource type="Texture2D" uid="uid://bbveiqg1ydlc" path="res://Assets/storeBlock2_Over.png" id="3_asrp6"]
+[ext_resource type="Texture2D" uid="uid://d4bb4u4s5o4lv" path="res://Assets/tojam25_storeBlock_On.png" id="3_pnudm"]
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="4_asrp6"]
+[ext_resource type="Texture2D" uid="uid://dk6iv3ce5dgr0" path="res://Assets/tojam25_storeBlock_Over.png" id="4_u8l38"]
 [ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="5_tga60"]
 
 [node name="ShopItems" type="BoxContainer"]
@@ -14,9 +17,9 @@ script = ExtResource("1_wmysf")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
-texture_normal = ExtResource("1_ewy27")
-texture_pressed = ExtResource("2_idtay")
-texture_hover = ExtResource("3_asrp6")
+texture_normal = ExtResource("2_i6hie")
+texture_pressed = ExtResource("3_pnudm")
+texture_hover = ExtResource("4_u8l38")
 
 [node name="LabelTitle" type="Label" parent="TextureButton"]
 layout_mode = 0

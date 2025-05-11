@@ -2,4 +2,4 @@ extends ScrollContainer
 
 
 func _ready():
-   get_v_scroll_bar().custom_minimum_size.x = 50;
+   get_v_scroll_bar().custom_minimum_size.x = 45;

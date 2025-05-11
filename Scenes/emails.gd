@@ -42,7 +42,7 @@ func read_email_file():
 						print(linelist[c])
 						var neutral = []
 						neutral = linelist[c].split(",")
-						print(neutral[5])
+						#print(neutral[5])
 					c+=1
 				emails.append(e)
 		file.close()
