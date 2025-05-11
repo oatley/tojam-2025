@@ -20,6 +20,9 @@ func _process(delta):
 		print ("DOOOT", brightness)
 		$TextureRectFlash.modulate = Color.from_rgba8(255,255,255,brightness)
 		brightness -= 10
+		if brightness < 0:
+			$TextureRectFlash.visible = false
+			
 		
 
 func change_face(sender, face):

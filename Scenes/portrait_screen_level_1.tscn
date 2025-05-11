@@ -59,7 +59,6 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="TextureRectFlash" type="TextureRect" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("GradientTexture2D_howwa")
