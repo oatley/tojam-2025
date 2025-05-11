@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://v6bj3lynomqp"]
+[gd_scene load_steps=10 format=3 uid="uid://v6bj3lynomqp"]
 
 [ext_resource type="Texture2D" uid="uid://bw3sdbbdinp02" path="res://Assets/tojam25_photo1.png" id="1_8xp6f"]
 [ext_resource type="Script" uid="uid://c0syvgssf1mji" path="res://Scenes/portrait_screen_level_1.gd" id="1_xeq12"]
 [ext_resource type="Texture2D" uid="uid://nj0oj3lrjyl" path="res://Assets/tojam25_photoFace2.png" id="3_xeq12"]
+[ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_16kuj"]
+[ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="5_yxrg1"]
+[ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="6_e4svs"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="7_u8v6l"]
+
+[sub_resource type="Gradient" id="Gradient_xeq12"]
+offsets = PackedFloat32Array(0, 0.00641026)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_howwa"]
+gradient = SubResource("Gradient_xeq12")
+width = 1920
+height = 1080
 
 [node name="PortraitScreenLevel1" type="Node2D"]
 script = ExtResource("1_xeq12")
@@ -22,3 +34,34 @@ offset_bottom = 365.0
 rotation = 0.257188
 texture = ExtResource("3_xeq12")
 expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1538.0
+offset_top = 962.0
+offset_right = 1788.0
+offset_bottom = 1002.0
+texture_normal = ExtResource("4_16kuj")
+texture_pressed = ExtResource("5_yxrg1")
+texture_hover = ExtResource("6_e4svs")
+
+[node name="LabelTitle" type="Label" parent="TextureButton"]
+offset_left = 82.0
+offset_top = 31.0
+offset_right = 289.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_u8v6l")
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRectFlash" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_howwa")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

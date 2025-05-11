@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://bme7qhtl368qf"]
+[gd_scene load_steps=7 format=3 uid="uid://bme7qhtl368qf"]
+
+[ext_resource type="Script" uid="uid://bcbqp56bmcji4" path="res://Scenes/main_menu.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://bb0si1s751yj6" path="res://Assets/tojam25_mainMenu.png" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="3_21xkr"]
+[ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="4_6bp64"]
+[ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="5_344ge"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="6_ynf5e"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jjgbg")
+
+[node name="Tojam25MainMenu" type="Sprite2D" parent="."]
+texture = ExtResource("2_bo1nx")
+centered = false
+
+[node name="TextureButton" type="TextureButton" parent="Tojam25MainMenu"]
+offset_left = 799.0
+offset_top = 834.0
+offset_right = 1119.0
+offset_bottom = 930.0
+texture_normal = ExtResource("3_21xkr")
+texture_pressed = ExtResource("4_6bp64")
+texture_hover = ExtResource("5_344ge")
+
+[node name="LabelTitle" type="Label" parent="Tojam25MainMenu/TextureButton"]
+offset_left = 82.0
+offset_top = 31.0
+offset_right = 289.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ynf5e")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[connection signal="pressed" from="Tojam25MainMenu/TextureButton" to="." method="_on_texture_button_pressed"]
