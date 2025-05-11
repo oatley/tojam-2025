@@ -2,7 +2,7 @@ extends Node2D
 
 var data_header = []
 var items = []
-var filename = "test.csv" 
+var filename = "item_storage.csv" 
 var item_general_categories = []
 var item_specific_categories = []
 var isReady = false

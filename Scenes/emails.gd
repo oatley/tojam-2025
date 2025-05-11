@@ -1,6 +1,6 @@
 extends Node2D
 
-var filename = "emails.tsv"
+var filename = "email_storage.tsv"
 var data_header = []
 var emails = []
 var emails_level_1 = []

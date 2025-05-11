@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dvd37lo6caj1c"
+
+[deps]
+
+files=["res://item_storage.Specific Category.translation", "res://item_storage.Item ID.translation", "res://item_storage.First Level Added.translation", "res://item_storage.Store Name.translation", "res://item_storage.Art Asset.translation", "res://item_storage.Store Description.translation", "res://item_storage.Art Notes.translation", "res://item_storage.General Notes.translation", "res://item_storage.Colour 1.translation", "res://item_storage.Colour 2.translation"]
+
+source_file="res://item_storage.csv"
+dest_files=["res://item_storage.Specific Category.translation", "res://item_storage.Item ID.translation", "res://item_storage.First Level Added.translation", "res://item_storage.Store Name.translation", "res://item_storage.Art Asset.translation", "res://item_storage.Store Description.translation", "res://item_storage.Art Notes.translation", "res://item_storage.General Notes.translation", "res://item_storage.Colour 1.translation", "res://item_storage.Colour 2.translation"]
+
+[params]
+
+compress=true
+delimiter=0
