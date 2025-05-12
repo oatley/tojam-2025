@@ -88,9 +88,17 @@ func contact_fill():
 		emails = $Emails.emails_level_3
 	print(contact_buttons)
 	for button in contact_buttons:
-		print(button)
+		#print(button)
 		button.get_node("LabelContact").text = emails[count]["Sender Name"]
 		button.get_node("LabelSubject").text = emails[count]["Subject Line"]
+		var profile = "res://Assets/Pic_" + emails[count]["Sender Name"] + str(level) + ".png"
+		button.get_node("TextureRectContact").texture = load(profile)
+		if count == email_contact:
+			button.texture_normal = email_block_enabled_off
+			button.texture_hover = email_block_enabled_over
+		else:
+			button.texture_normal = email_block_disabled_off
+			button.texture_hover = email_block_disabled_over
 		count += 1
 
 #func contact_fill_old(contact_name, contact_subject):

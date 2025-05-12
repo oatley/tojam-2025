@@ -25,7 +25,7 @@ offset_right = 1922.0
 offset_bottom = 1080.0
 texture = ExtResource("2_tedqh")
 
-[node name="TextureRectClareFace" type="TextureRect" parent="TextureRectPortrait"]
+[node name="TextureRectClaireFace" type="TextureRect" parent="TextureRectPortrait"]
 layout_mode = 0
 offset_left = 1041.0
 offset_top = 223.0

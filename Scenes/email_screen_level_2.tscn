@@ -1,14 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://bethe3wyoxgu3"]
+[gd_scene load_steps=16 format=3 uid="uid://bethe3wyoxgu3"]
 
 [ext_resource type="Script" uid="uid://bgl3mrni6bl7q" path="res://Scenes/email_screen_level_2.gd" id="1_xeac5"]
 [ext_resource type="Texture2D" uid="uid://bs86oj71qxjtc" path="res://Assets/tojam25_emailLayout.png" id="2_04buk"]
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="3_0b84o"]
 [ext_resource type="Texture2D" uid="uid://cftccgdyvwby" path="res://Assets/tojam25_emailBlock2_Over.png" id="4_04buk"]
 [ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="4_7mags"]
+[ext_resource type="Texture2D" uid="uid://b1c1if6loi5p0" path="res://Assets/Pic_Claire1.png" id="5_04buk"]
 [ext_resource type="Texture2D" uid="uid://cxslwohbvnbaf" path="res://Assets/tojam25_emailBlock2_Off.png" id="5_bmgvn"]
-[ext_resource type="Texture2D" uid="uid://c7tcb3800ym5s" path="res://Assets/tojam25_profilePic_claire1.png" id="6_wvwnk"]
+[ext_resource type="Texture2D" uid="uid://bp7u0ucb80686" path="res://Assets/tojam25_emailBlock1_Over.png" id="5_mtgou"]
 [ext_resource type="Texture2D" uid="uid://inkkumrsb03e" path="res://Assets/tojam25_emailLayoutRef.png" id="7_2i1bi"]
+[ext_resource type="Texture2D" uid="uid://dsbrkf7o0d6d1" path="res://Assets/Pic_Claire2.png" id="8_2i1bi"]
+[ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="8_bmgvn"]
 [ext_resource type="PackedScene" uid="uid://1dopslnjq3w3" path="res://Scenes/emails.tscn" id="8_mtgou"]
+[ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="9_wvwnk"]
+[ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="10_2i1bi"]
+[ext_resource type="Texture2D" uid="uid://nj0oj3lrjyl" path="res://Assets/tojam25_photoFace2.png" id="14_mtgou"]
 
 [node name="EmailScreenLevel2" type="Node2D"]
 visibility_layer = 4
@@ -18,6 +24,17 @@ script = ExtResource("1_xeac5")
 visibility_layer = 16
 texture = ExtResource("2_04buk")
 centered = false
+
+[node name="TextureButtonExit" type="TextureButton" parent="EmailLayout"]
+offset_left = 1718.0
+offset_top = 129.0
+offset_right = 1791.0
+offset_bottom = 202.0
+texture_normal = ExtResource("8_bmgvn")
+texture_pressed = ExtResource("9_wvwnk")
+texture_hover = ExtResource("10_2i1bi")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="EmailLayout"]
 offset_left = 128.0
@@ -32,6 +49,15 @@ layout_mode = 2
 layout_mode = 2
 texture_normal = ExtResource("5_bmgvn")
 texture_hover = ExtResource("4_04buk")
+texture_disabled = ExtResource("5_mtgou")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("5_04buk")
 
 [node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
 z_index = 1
@@ -65,6 +91,7 @@ text_overrun_behavior = 3
 layout_mode = 2
 texture_normal = ExtResource("5_bmgvn")
 texture_hover = ExtResource("4_04buk")
+texture_disabled = ExtResource("5_mtgou")
 
 [node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact2"]
 z_index = 1
@@ -94,10 +121,18 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact2"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("8_2i1bi")
+
 [node name="TextureButtonContact3" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_bmgvn")
 texture_hover = ExtResource("4_04buk")
+texture_disabled = ExtResource("5_mtgou")
 
 [node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact3"]
 z_index = 1
@@ -127,10 +162,18 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact3"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("5_04buk")
+
 [node name="TextureButtonContact4" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_bmgvn")
 texture_hover = ExtResource("4_04buk")
+texture_disabled = ExtResource("5_mtgou")
 
 [node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact4"]
 z_index = 1
@@ -159,6 +202,13 @@ text = "doooo"
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact4"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("5_04buk")
 
 [node name="LabelFrom" type="Label" parent="EmailLayout"]
 offset_left = 813.0
@@ -221,16 +271,6 @@ text = "Place"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="TextureButtonExit" type="TextureButton" parent="EmailLayout"]
-offset_left = 1718.0
-offset_top = 129.0
-offset_right = 1791.0
-offset_bottom = 201.0
-
-[node name="Tojam25ProfilePicClaire1" type="Sprite2D" parent="EmailLayout"]
-position = Vector2(207, 293)
-texture = ExtResource("6_wvwnk")
-
 [node name="Tojam25EmailLayoutRef" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("7_2i1bi")
@@ -238,5 +278,11 @@ centered = false
 
 [node name="Emails" parent="." instance=ExtResource("8_mtgou")]
 process_priority = 1
+
+[node name="Tojam25PhotoFace2" type="Sprite2D" parent="."]
+position = Vector2(206, 459)
+rotation = 0.498219
+scale = Vector2(0.185542, 0.185542)
+texture = ExtResource("14_mtgou")
 
 [connection signal="pressed" from="EmailLayout/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

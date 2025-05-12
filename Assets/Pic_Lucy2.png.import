@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8tfg3tnw2ibe"
-path="res://.godot/imported/FlowerKitBase.png-69ff977736ea1b010ec7c066178c2831.ctex"
+uid="uid://c8wwhosxcwal"
+path="res://.godot/imported/Pic_Lucy2.png-1a96efd8b45912334b56218108f7cd33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/FlowerKitBase.png"
-dest_files=["res://.godot/imported/FlowerKitBase.png-69ff977736ea1b010ec7c066178c2831.ctex"]
+source_file="res://Assets/Pic_Lucy2.png"
+dest_files=["res://.godot/imported/Pic_Lucy2.png-1a96efd8b45912334b56218108f7cd33.ctex"]
 
 [params]
 

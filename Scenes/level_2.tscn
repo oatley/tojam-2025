@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8aqg38isgn80"]
+[gd_scene load_steps=11 format=3 uid="uid://8aqg38isgn80"]
 
 [ext_resource type="Script" uid="uid://db1kgmho0tocf" path="res://Scenes/level_2.gd" id="1_v3rpw"]
 [ext_resource type="PackedScene" uid="uid://cy73i6caqvn2n" path="res://Scenes/store_level_2.tscn" id="2_smnlx"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dqcpjjnvv5lts" path="res://Scenes/cart_level_2.tscn" id="4_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://bethe3wyoxgu3" path="res://Scenes/email_screen_level_2.tscn" id="5_v36qu"]
 [ext_resource type="PackedScene" uid="uid://d3g0fxmtit8d4" path="res://Scenes/portrait_screen_level_2.tscn" id="6_cggpd"]
+[ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_42uki"]
 [ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="7_055b2"]
+[ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_t7v2y"]
+[ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_ait6c"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_v3rpw")
@@ -23,6 +26,19 @@ z_index = 1
 [node name="PortraitScreenLevel2" parent="." instance=ExtResource("6_cggpd")]
 visible = false
 
+[node name="TextureButtonExit" type="TextureButton" parent="."]
+offset_left = 1836.0
+offset_top = 7.0
+offset_right = 1909.0
+offset_bottom = 80.0
+texture_normal = ExtResource("7_42uki")
+texture_pressed = ExtResource("8_t7v2y")
+texture_hover = ExtResource("9_ait6c")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_055b2")
 autoplay = true
+
+[connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

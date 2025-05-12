@@ -28,15 +28,20 @@ func _process(delta):
 
 func change_face(sender, face):
 	var current_face
+	var face_location
 	if face == "happy":
 		current_face = happy_face
 	elif face == "neutral":
 		current_face = neutral_face
 	else:
 		current_face = sad_face
-	if sender == "Claire":
-		$TextureRectPortrait/TextureRectClareFace.texture = current_face
-		$TextureRectPortrait/TextureRectClareFace.visible = true
+	print(sender)
+	face_location = get_node("TextureRectPortrait/TextureRect"+sender+"Face")
+	face_location.texture = current_face
+	face_location.visible = true
+	#if sender == "Claire":
+		#$TextureRectPortrait/TextureRectClareFace.texture = current_face
+		#$TextureRectPortrait/TextureRectClareFace.visible = true
 		
 	
 func load_main_menu():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dthd1euk26cla"
-path="res://.godot/imported/FlowerKitCol1.png-6372040d9b937b0a07b1716f8a835538.ctex"
+uid="uid://b35lmh5jaexb8"
+path="res://.godot/imported/FlowerkitCol2.png-fb7f2fc3eadf0ae5446f1f31955a0350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/FlowerKitCol1.png"
-dest_files=["res://.godot/imported/FlowerKitCol1.png-6372040d9b937b0a07b1716f8a835538.ctex"]
+source_file="res://Assets/Items/FlowerkitCol2.png"
+dest_files=["res://.godot/imported/FlowerkitCol2.png-fb7f2fc3eadf0ae5446f1f31955a0350.ctex"]
 
 [params]
 

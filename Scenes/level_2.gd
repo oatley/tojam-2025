@@ -42,6 +42,7 @@ func unhide_portrait():
 		$Objectives.visible = false
 		$Cart.visible = false
 		$EmailScreenLevel2.visible = false
+		$TextureButtonExit.visible = false
 		$PortraitScreenLevel2.visible = true
 		$PortraitScreenLevel2/TextureRectFlash.visible = true
 		$PortraitScreenLevel2.brightness = 255
@@ -50,6 +51,7 @@ func unhide_portrait():
 		$Objectives.visible = false
 		$Cart.visible = false
 		$EmailScreenLevel3.visible = false
+		$TextureButtonExit.visible = false
 		$PortraitScreenLevel3.visible = true
 		$PortraitScreenLevel3/TextureRectFlash.visible = true
 		$PortraitScreenLevel3.brightness = 255
@@ -80,7 +82,9 @@ func add_to_cart():
 	print ("level_",level,".gd: add to cart started")
 	if ($EmailScreenLevel2.email_contacts-1) != $EmailScreenLevel2.email_contact:
 		$EmailScreenLevel2.email_contact += 1
+		$EmailScreenLevel2.contact_fill()
 		$EmailScreenLevel2.load_emails()
+		$StoreLevel2/LabelContacts.text = str($EmailScreenLevel2.email_contact+1) + "/" + str($EmailScreenLevel2.email_contacts)
 	else:
 		checkout()
 	
@@ -158,4 +162,9 @@ func fill_objectives():
 
 func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play()
+	pass # Replace with function body.
+
+
+func _on_texture_button_exit_pressed() -> void:
+	get_tree().quit()
 	pass # Replace with function body.
