@@ -50,6 +50,7 @@ func _ready():
 
 func set_label_contacts(text):
 	$LabelContacts.text = text
+	$LabelLevel.text = str(level)
 
 func set_label_body(text):
 	$LabelBody.text = text

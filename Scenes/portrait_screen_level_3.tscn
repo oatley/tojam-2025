@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=3 uid="uid://cajifkgcytvd8"]
+
+[ext_resource type="Script" uid="uid://dfxyxpohk431c" path="res://Scenes/portrait_screen_all.gd" id="1_noarp"]
+[ext_resource type="Texture2D" uid="uid://ducssuvhbe1jr" path="res://Assets/tojam25_photo3.png" id="2_noarp"]
+[ext_resource type="Texture2D" uid="uid://nj0oj3lrjyl" path="res://Assets/tojam25_photoFace2.png" id="3_oxlmc"]
+[ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_kuyql"]
+[ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="5_34ldv"]
+[ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="6_dpy00"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="7_04fiy"]
+
+[sub_resource type="Gradient" id="Gradient_xeq12"]
+offsets = PackedFloat32Array(0, 0.00641026)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_howwa"]
+gradient = SubResource("Gradient_xeq12")
+width = 1920
+height = 1080
+
+[node name="PortraitScreenLevel3" type="Node2D"]
+script = ExtResource("1_noarp")
+
+[node name="TextureRectPortrait" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_right = 1922.0
+offset_bottom = 1080.0
+texture = ExtResource("2_noarp")
+
+[node name="TextureRectClaireFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 270.0
+offset_right = 384.0
+offset_bottom = 398.0
+rotation = 0.136983
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectLucyFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 333.0
+offset_right = 807.0
+offset_bottom = 461.0
+rotation = 0.0559822
+scale = Vector2(0.943455, 0.943455)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectGeorgeFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 518.0
+offset_right = 1066.0
+offset_bottom = 646.0
+rotation = -0.0191446
+scale = Vector2(1.16178, 1.16178)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectJeanFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 693.0
+offset_right = 791.0
+offset_bottom = 821.0
+rotation = 0.037566
+scale = Vector2(1.06188, 1.06188)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectDaveFace" type="TextureRect" parent="TextureRectPortrait"]
+offset_left = 1269.0
+offset_top = 155.0
+offset_right = 1397.0
+offset_bottom = 283.0
+rotation = -0.0282109
+scale = Vector2(1.1769, 1.1769)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectEmmaFace" type="TextureRect" parent="TextureRectPortrait"]
+offset_left = 489.0
+offset_top = 409.0
+offset_right = 617.0
+offset_bottom = 537.0
+rotation = 0.452483
+scale = Vector2(0.693235, 0.730152)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectJulianFace" type="TextureRect" parent="TextureRectPortrait"]
+offset_left = 1346.0
+offset_top = 746.0
+offset_right = 1474.0
+offset_bottom = 874.0
+rotation = -0.064148
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectKenFace" type="TextureRect" parent="TextureRectPortrait"]
+offset_left = 978.0
+offset_top = 230.0
+offset_right = 1106.0
+offset_bottom = 358.0
+rotation = -0.0301247
+scale = Vector2(1.01202, 1.01202)
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureRectRoxanneFace" type="TextureRect" parent="TextureRectPortrait"]
+offset_left = 1503.0
+offset_top = 372.0
+offset_right = 1631.0
+offset_bottom = 500.0
+rotation = -0.0868175
+texture = ExtResource("3_oxlmc")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1475.0
+offset_top = 100.0
+offset_right = 1745.0
+offset_bottom = 181.0
+texture_normal = ExtResource("4_kuyql")
+texture_pressed = ExtResource("5_34ldv")
+texture_hover = ExtResource("6_dpy00")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LabelTitle" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 26.0
+offset_right = 262.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_04fiy")
+theme_override_font_sizes/font_size = 32
+text = "MainMenu"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 1475.0
+offset_top = 185.0
+offset_right = 1748.0
+offset_bottom = 267.0
+texture_normal = ExtResource("4_kuyql")
+texture_pressed = ExtResource("5_34ldv")
+texture_hover = ExtResource("6_dpy00")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LabelTitle" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 23.0
+offset_right = 251.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_04fiy")
+theme_override_font_sizes/font_size = 32
+text = "Replay"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRectFlash" type="TextureRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_howwa")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -7,7 +7,7 @@ var emails_level_1 = []
 var emails_level_2 = []
 var emails_level_3 = []
 
-var level = 1
+var level
 
 
 
@@ -54,6 +54,7 @@ func read_email_file():
 			if email["Level"] == "2":
 				emails_level_2.append(email)
 			if email["Level"] == "3":
+				#print(email)
 				emails_level_3.append(email)
 		#print(emails_level_1)
 		print("emails.gd: number of emails in level 1: -> ", len(emails_level_1))

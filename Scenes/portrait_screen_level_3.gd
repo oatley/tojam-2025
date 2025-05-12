@@ -8,7 +8,6 @@ var sad_face = load("res://Assets/tojam25_photoFace3.png")
 
 var main_menu = "res://Scenes/main.tscn"
 
-
 # Flash
 var time = 0
 var brightness = 255
@@ -54,21 +53,6 @@ func change_face(sender, face):
 func load_main_menu():
 	get_tree().change_scene_to_file(main_menu)
 
-func load_next_level():
-	get_tree().change_scene_to_file("res://Scenes/level_"+ str(level+1) +".tscn")
-	pass
-
-func load_current_level():
-	get_tree().change_scene_to_file("res://Scenes/level_"+ str(level) +".tscn")
-	pass
-
 func _on_texture_button_pressed() -> void:
-	if level == 3:
-		load_main_menu()
-	else:
-		load_next_level()
-	pass # Replace with function body.
-
-func _on_texture_button_2_pressed() -> void:
-	load_current_level()
+	load_main_menu()
 	pass # Replace with function body.

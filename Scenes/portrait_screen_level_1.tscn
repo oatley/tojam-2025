@@ -25,7 +25,6 @@ offset_bottom = 40.0
 texture = ExtResource("1_8xp6f")
 
 [node name="TextureRectClaireFace" type="TextureRect" parent="TextureRectPortrait"]
-visible = false
 layout_mode = 0
 offset_left = 937.0
 offset_top = 237.0
@@ -36,10 +35,10 @@ texture = ExtResource("3_xeq12")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1533.0
-offset_top = 44.0
-offset_right = 1853.0
-offset_bottom = 140.0
+offset_left = 1475.0
+offset_top = 100.0
+offset_right = 1795.0
+offset_bottom = 196.0
 texture_normal = ExtResource("4_16kuj")
 texture_pressed = ExtResource("5_yxrg1")
 texture_hover = ExtResource("6_e4svs")
@@ -59,10 +58,35 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 1475.0
+offset_top = 200.0
+offset_right = 1795.0
+offset_bottom = 296.0
+texture_normal = ExtResource("4_16kuj")
+texture_pressed = ExtResource("5_yxrg1")
+texture_hover = ExtResource("6_e4svs")
+
+[node name="LabelTitle" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 31.0
+offset_right = 289.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_u8v6l")
+theme_override_font_sizes/font_size = 32
+text = "Replay"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
 [node name="TextureRectFlash" type="TextureRect" parent="."]
 visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("GradientTexture2D_howwa")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

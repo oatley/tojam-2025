@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://8aqg38isgn80"]
 
-[ext_resource type="Script" uid="uid://db1kgmho0tocf" path="res://Scenes/level_2.gd" id="1_v3rpw"]
-[ext_resource type="PackedScene" uid="uid://cy73i6caqvn2n" path="res://Scenes/store_level_2.tscn" id="2_smnlx"]
-[ext_resource type="PackedScene" uid="uid://d0qmdgj3l5eae" path="res://Scenes/objectives_level_1.tscn" id="3_12fag"]
-[ext_resource type="PackedScene" uid="uid://dqcpjjnvv5lts" path="res://Scenes/cart_level_2.tscn" id="4_1q6tm"]
-[ext_resource type="PackedScene" uid="uid://bethe3wyoxgu3" path="res://Scenes/email_screen_level_2.tscn" id="5_v36qu"]
+[ext_resource type="Script" uid="uid://dy55ya5uv71yl" path="res://Scenes/level_all.gd" id="1_v36qu"]
+[ext_resource type="PackedScene" uid="uid://b1vom0n3rk7kg" path="res://Scenes/store_all.tscn" id="2_42uki"]
+[ext_resource type="PackedScene" uid="uid://bav75o5bblhiw" path="res://Scenes/objectives_all.tscn" id="3_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://cg82jvh8jpwiy" path="res://Scenes/cart_all.tscn" id="4_42uki"]
+[ext_resource type="PackedScene" uid="uid://dqokqfncfd2nh" path="res://Scenes/email_screen_all.tscn" id="5_ait6c"]
 [ext_resource type="PackedScene" uid="uid://d3g0fxmtit8d4" path="res://Scenes/portrait_screen_level_2.tscn" id="6_cggpd"]
 [ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_42uki"]
 [ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="7_055b2"]
@@ -12,22 +12,27 @@
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_ait6c"]
 
 [node name="Level2" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
-script = ExtResource("1_v3rpw")
+script = ExtResource("1_v36qu")
 level = 2
-screen_store = NodePath("StoreLevel2")
+screen_store = NodePath("Store")
 screen_objectives = NodePath("Objectives")
 screen_cart = NodePath("Cart")
-screen_email = NodePath("EmailScreenLevel2")
+screen_email = NodePath("EmailScreen")
 screen_portrait = NodePath("PortraitScreenLevel2")
 
-[node name="StoreLevel2" parent="." instance=ExtResource("2_smnlx")]
+[node name="Store" parent="." instance=ExtResource("2_42uki")]
+z_index = -1
+level = 2
 
-[node name="Objectives" parent="." instance=ExtResource("3_12fag")]
+[node name="Objectives" parent="." instance=ExtResource("3_t7v2y")]
+level = 2
 
-[node name="Cart" parent="." instance=ExtResource("4_1q6tm")]
+[node name="Cart" parent="." instance=ExtResource("4_42uki")]
+level = 2
 
-[node name="EmailScreenLevel2" parent="." instance=ExtResource("5_v36qu")]
+[node name="EmailScreen" parent="." instance=ExtResource("5_ait6c")]
 z_index = 1
+level = 2
 
 [node name="PortraitScreenLevel2" parent="." instance=ExtResource("6_cggpd")]
 visible = false

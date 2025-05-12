@@ -456,26 +456,18 @@ theme_override_font_sizes/font_size = 32
 text = "Place"
 vertical_alignment = 1
 
-[node name="LabelBody3" type="RichTextLabel" parent="EmailLayout"]
-visible = false
-offset_left = 687.0
-offset_top = 477.0
-offset_right = 1775.0
-offset_bottom = 940.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("11_xjks8")
-theme_override_fonts/bold_font = ExtResource("10_3jc81")
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-text = "Test"
-vertical_alignment = 1
-justification_flags = 35
-
-[node name="LabelBody" type="Label" parent="EmailLayout"]
-offset_left = 685.0
+[node name="ScrollContainer2" type="ScrollContainer" parent="EmailLayout"]
+offset_left = 684.0
 offset_top = 475.0
-offset_right = 1768.0
-offset_bottom = 930.0
+offset_right = 1774.0
+offset_bottom = 935.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EmailLayout/ScrollContainer2"]
+layout_mode = 2
+
+[node name="LabelBody" type="Label" parent="EmailLayout/ScrollContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(1090, 460)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("11_xjks8")
@@ -490,6 +482,6 @@ texture = ExtResource("13_cqwaw")
 centered = false
 
 [node name="Emails" parent="." instance=ExtResource("14_f28ju")]
-process_priority = 1
+process_priority = 2
 
 [connection signal="pressed" from="EmailLayout/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

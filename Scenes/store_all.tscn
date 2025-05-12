@@ -64,3 +64,14 @@ theme_override_font_sizes/font_size = 28
 text = "1/4"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LabelLevel" type="Label" parent="."]
+offset_left = 1545.0
+offset_top = 113.0
+offset_right = 1617.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("8_u4nld")
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

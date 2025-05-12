@@ -4,6 +4,12 @@ extends Node2D
 var is_email_open = false
 var button_pressed = false
 
+func set_label_contact(text):
+	$LabelContact.text = text
+	
+func set_label_subject(text):
+	$LabelSubject.text = text
+
 func set_gift_objective(gift_num, objective):
 	var node = get_node("LabelGiftIdeasObjective" + str(gift_num))
 	node.text = str(objective)

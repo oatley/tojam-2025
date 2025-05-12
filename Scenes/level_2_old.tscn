@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://brcmou21kj66s"]
+
+[ext_resource type="Script" uid="uid://db1kgmho0tocf" path="res://Scenes/level_2.gd" id="1_3o508"]
+[ext_resource type="PackedScene" uid="uid://cy73i6caqvn2n" path="res://Scenes/store_level_2.tscn" id="2_a5ny2"]
+[ext_resource type="PackedScene" uid="uid://d0qmdgj3l5eae" path="res://Scenes/objectives_level_1.tscn" id="3_erf7x"]
+[ext_resource type="PackedScene" uid="uid://dqcpjjnvv5lts" path="res://Scenes/cart_level_2.tscn" id="4_jf6it"]
+[ext_resource type="PackedScene" uid="uid://bethe3wyoxgu3" path="res://Scenes/email_screen_level_2.tscn" id="5_xue3t"]
+[ext_resource type="PackedScene" uid="uid://d3g0fxmtit8d4" path="res://Scenes/portrait_screen_level_2.tscn" id="6_k5iec"]
+[ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_ril8r"]
+[ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_knqya"]
+[ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_fgaqk"]
+[ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="10_beeic"]
+
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
+script = ExtResource("1_3o508")
+level = 2
+screen_store = NodePath("StoreLevel2")
+screen_objectives = NodePath("Objectives")
+screen_cart = NodePath("Cart")
+screen_email = NodePath("EmailScreenLevel2")
+screen_portrait = NodePath("PortraitScreenLevel2")
+
+[node name="StoreLevel2" parent="." instance=ExtResource("2_a5ny2")]
+
+[node name="Objectives" parent="." instance=ExtResource("3_erf7x")]
+
+[node name="Cart" parent="." instance=ExtResource("4_jf6it")]
+
+[node name="EmailScreenLevel2" parent="." instance=ExtResource("5_xue3t")]
+z_index = 1
+
+[node name="PortraitScreenLevel2" parent="." instance=ExtResource("6_k5iec")]
+visible = false
+
+[node name="TextureButtonExit" type="TextureButton" parent="."]
+offset_left = 1836.0
+offset_top = 7.0
+offset_right = 1909.0
+offset_bottom = 80.0
+texture_normal = ExtResource("7_ril8r")
+texture_pressed = ExtResource("8_knqya")
+texture_hover = ExtResource("9_fgaqk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_beeic")
+autoplay = true
+
+[connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

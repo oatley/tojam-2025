@@ -24,7 +24,7 @@ var email_outcome_index = 0
 
 func _ready():
 	fill_objectives()
-	screen_store.set_label_contacts (str(screen_email.email_contact) + "/" + str(screen_email.email_contacts))
+	screen_store.set_label_contacts ("0/" + str(screen_email.email_contacts))
 	pass
 	
 func _process (delta):
@@ -81,21 +81,28 @@ func add_email_outcome():
 	
 # Checkout button to see if you are done the level or more contacts
 func add_to_cart():
-	print ("level_",level,".gd: add to cart started ", email_outcomes)
+	
 	# Check if no item selected
 	if not selected_cart_item_id:
 		print ("level_",level,".gd: no item in cart")
 		return
+	
 	# Prepare emails
-	screen_email.contact_fill()
-	screen_email.load_emails()
-	screen_store.set_label_contacts (str(screen_email.email_contact+1) + "/" + str(screen_email.email_contacts))
+	
 	# Store how well you did choosing the right/wrong gift
 	if (screen_email.email_contacts-1) != screen_email.email_contact:
-		screen_email.email_contact += 1
 		add_email_outcome()
+		print("level_all.g: add to cart ", email_outcomes)
+		for key in email_outcomes:
+			screen_email.hide_contact_button ()
+		screen_email.email_contact += 1
+		screen_email.contact_fill()
+		screen_email.load_emails()
+		fill_objectives()
+		screen_store.set_label_contacts (str(screen_email.email_contact) + "/" + str(screen_email.email_contacts))
 	else:
 		add_email_outcome()
+		print("level_all.g: add to cart ", email_outcomes)
 		checkout()
 	
 func checkout():
@@ -107,7 +114,6 @@ func checkout():
 	elif level == 3:
 		game_over(email_outcomes)
 	
-	
 func fill_cart():
 	if selected_cart_item:
 		screen_cart.image_item.gen_item(selected_cart_item, selected_cart_col1, selected_cart_col2)
@@ -118,12 +124,11 @@ func fill_cart():
 		screen_cart.set_checkout_label("Add To Cart")
 	
 	
-
-
-
 func fill_objectives():
 	#$Objectives/LabelContact.text = $EmailScreenLevel2.email_name
 	#$Objectives/LabelSubject.text = $EmailScreenLevel2.email_subject
+	screen_objectives.set_label_contact(screen_email.email_name)
+	screen_objectives.set_label_subject(screen_email.email_subject)
 	var gift_ideas = {	"1": "",
 					 	"2": "", 
 						"3": "",

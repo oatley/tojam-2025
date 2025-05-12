@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d3g0fxmtit8d4"]
 
-[ext_resource type="Script" uid="uid://b7b85s82xg336" path="res://Scenes/portrait_screen_level_2.gd" id="1_tedqh"]
+[ext_resource type="Script" uid="uid://dfxyxpohk431c" path="res://Scenes/portrait_screen_all.gd" id="1_tedqh"]
 [ext_resource type="Texture2D" uid="uid://d2sm3x155f454" path="res://Assets/tojam25_photo2.png" id="2_tedqh"]
 [ext_resource type="Texture2D" uid="uid://nj0oj3lrjyl" path="res://Assets/tojam25_photoFace2.png" id="3_k14qt"]
 [ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_3vs4x"]
@@ -37,12 +37,12 @@ expand_mode = 1
 
 [node name="TextureRectLucyFace" type="TextureRect" parent="TextureRectPortrait"]
 layout_mode = 0
-offset_left = 884.0
-offset_top = 305.0
-offset_right = 1012.0
-offset_bottom = 433.0
+offset_left = 878.0
+offset_top = 301.0
+offset_right = 1006.0
+offset_bottom = 429.0
 rotation = 0.0559822
-scale = Vector2(0.778615, 0.778615)
+scale = Vector2(0.847766, 0.847766)
 texture = ExtResource("3_k14qt")
 expand_mode = 1
 
@@ -68,10 +68,10 @@ texture = ExtResource("3_k14qt")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1456.0
-offset_top = 120.0
-offset_right = 1776.0
-offset_bottom = 216.0
+offset_left = 1475.0
+offset_top = 100.0
+offset_right = 1795.0
+offset_bottom = 196.0
 texture_normal = ExtResource("4_3vs4x")
 texture_pressed = ExtResource("5_jh2ro")
 texture_hover = ExtResource("6_kbe6g")
@@ -91,10 +91,35 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 1475.0
+offset_top = 200.0
+offset_right = 1795.0
+offset_bottom = 296.0
+texture_normal = ExtResource("4_3vs4x")
+texture_pressed = ExtResource("5_jh2ro")
+texture_hover = ExtResource("6_kbe6g")
+
+[node name="LabelTitle" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 31.0
+offset_right = 289.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_lisc0")
+theme_override_font_sizes/font_size = 32
+text = "Replay"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
 [node name="TextureRectFlash" type="TextureRect" parent="."]
 visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("GradientTexture2D_howwa")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://clslajq2c5ws1" path="res://Scenes/items.gd" id="1_ritxu"]
 
 [node name="Items" type="Node2D"]
+process_priority = 2
 script = ExtResource("1_ritxu")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

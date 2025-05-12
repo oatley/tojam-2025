@@ -26,7 +26,8 @@ var blue = Color.from_rgba8 (0, 106, 180, 255)
 var purple = Color.from_rgba8 (150, 0, 220, 255)
 var pink = Color.from_rgba8 (254, 72, 222, 255)
 var brown = Color.from_rgba8(81, 48, 2, 255)
-var white = Color.from_rgba8(255, 255, 255, 255)
+# White 237, 233, 218
+var white = Color.from_rgba8(237, 233, 218, 255)
 var black = Color.from_rgba8(0, 0, 0, 255)
 
 

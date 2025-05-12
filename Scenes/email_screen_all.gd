@@ -44,6 +44,11 @@ func find_contact_buttons():
 		var button = find_child("TextureButtonContact"+str(i))
 		button.visible = true
 		contact_buttons.append(button)
+	
+func hide_contact_button():
+	var i = email_contact+1 # nodes have 1 high number than contact
+	var button = find_child("TextureButtonContact"+str(i))
+	button.visible = false
 		
 func _ready():
 	load_emails()
@@ -70,6 +75,8 @@ func load_emails ():
 		load_level_1_emails(email_contact)
 	elif level == 2:
 		load_level_2_email(email_contact)
+	elif level == 3:
+		load_level_3_email(email_contact)	
 	$EmailLayout.visible = true
 
 func load_level_3_email(email_number=0):
@@ -121,8 +128,12 @@ func contact_fill():
 		emails = $Emails.emails_level_3
 	#print(contact_buttons)
 	#for button in contact_buttons:
+	if emails:
+		print("email_screen_all: emails do exist")
+	else:
+		print("email_screen_all: emails do NOT exist")
 	for i in range (0, len(emails)):
-		print (contact_buttons)
+		#print (contact_buttons)
 		var button = contact_buttons[i]
 		button.get_node("LabelContact").text = emails[count]["Sender Name"]
 		button.get_node("LabelSubject").text = emails[count]["Subject Line"]
@@ -137,17 +148,11 @@ func contact_fill():
 		#button.tooltip_text = emails[count]["Email Address"]
 		count += 1
 
-#func contact_fill_old(contact_name, contact_subject):
-	#var contact = $EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1/LabelContact
-	#var subject = $EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1/LabelSubject
-	#contact.text = contact_name
-	#subject.text = contact_subject
-
 func email_fill(from, to, subject, body):
 	$EmailLayout/LabelFrom.text = email_from
 	$EmailLayout/LabelTo.text = to
 	$EmailLayout/LabelSubject.text = subject
-	$EmailLayout/LabelBody.text = body
+	$EmailLayout/ScrollContainer2/VBoxContainer/LabelBody.text = body
 
 func close_email():
 	$EmailLayout.visible = false
