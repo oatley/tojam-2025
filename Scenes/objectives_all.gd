@@ -4,6 +4,9 @@ extends Node2D
 var is_email_open = false
 var button_pressed = false
 
+func set_profile_pic(image):
+	$ProfilePic.texture = load(image)
+
 func set_label_contact(text):
 	$LabelContact.text = text
 	

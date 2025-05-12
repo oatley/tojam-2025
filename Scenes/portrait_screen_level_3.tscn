@@ -69,6 +69,7 @@ texture = ExtResource("3_oxlmc")
 expand_mode = 1
 
 [node name="TextureRectDaveFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 1269.0
 offset_top = 155.0
 offset_right = 1397.0
@@ -79,6 +80,7 @@ texture = ExtResource("3_oxlmc")
 expand_mode = 1
 
 [node name="TextureRectEmmaFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 489.0
 offset_top = 409.0
 offset_right = 617.0
@@ -89,6 +91,7 @@ texture = ExtResource("3_oxlmc")
 expand_mode = 1
 
 [node name="TextureRectJulianFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 1346.0
 offset_top = 746.0
 offset_right = 1474.0
@@ -98,6 +101,7 @@ texture = ExtResource("3_oxlmc")
 expand_mode = 1
 
 [node name="TextureRectKenFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 978.0
 offset_top = 230.0
 offset_right = 1106.0
@@ -108,6 +112,7 @@ texture = ExtResource("3_oxlmc")
 expand_mode = 1
 
 [node name="TextureRectRoxanneFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 1503.0
 offset_top = 372.0
 offset_right = 1631.0

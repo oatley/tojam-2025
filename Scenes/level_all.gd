@@ -129,6 +129,11 @@ func fill_objectives():
 	#$Objectives/LabelSubject.text = $EmailScreenLevel2.email_subject
 	screen_objectives.set_label_contact(screen_email.email_name)
 	screen_objectives.set_label_subject(screen_email.email_subject)
+	#profile pic var profile = "res://Assets/Pic_" + emails[count]["Sender Name"] + str(level) + ".png"
+	var profile = "res://Assets/Pic_" + screen_email.email_name + str(level) + ".png"
+	screen_objectives.set_profile_pic(profile)
+	
+	
 	var gift_ideas = {	"1": "",
 					 	"2": "", 
 						"3": "",
