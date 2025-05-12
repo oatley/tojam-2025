@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = get_parent().level
+@export var level: int
 
 # Email
 var email_from = "from@email.com"
@@ -18,21 +18,37 @@ var email_block_disabled_over = load("res://Assets/tojam25_emailBlock1_Over.png"
 var email_block_enabled_off = load("res://Assets/tojam25_emailBlock2_Off.png")
 var email_block_enabled_over = load("res://Assets/tojam25_emailBlock2_Over.png")
 var email_contact = 0
-var email_contacts = 4
+var email_contacts = set_contacts()
 
 # Control
 var is_email_open = false
 var contact_buttons = []
 
-
-
+func set_contacts():
+	var contacts = 0
+	if level == 1:
+		contacts = 1
+	elif level == 2:
+		contacts = 4
+	elif level == 3:
+		contacts = 9
+	return contacts
+	
+func disable_contact_buttons():
+	for i in range(1,10):
+		var button = find_child("TextureButtonContact"+str(i))
+		button.visible = false
+		
 func find_contact_buttons():
 	for i in range(1,email_contacts+1):
-		contact_buttons.append(find_child("TextureButtonContact"+str(i)))
-
-
+		var button = find_child("TextureButtonContact"+str(i))
+		button.visible = true
+		contact_buttons.append(button)
+		
 func _ready():
 	load_emails()
+	email_contacts = set_contacts()
+	disable_contact_buttons()
 	find_contact_buttons()
 	contact_fill()
 	
@@ -55,7 +71,18 @@ func load_emails ():
 	elif level == 2:
 		load_level_2_email(email_contact)
 	$EmailLayout.visible = true
-		
+
+func load_level_3_email(email_number=0):
+	email_from = $Emails.emails_level_3[email_number]["Email Address"]
+	email_to = "fred.main_character@TOJam.com"
+	email_subject = $Emails.emails_level_3[email_number]["Subject Line"]
+	email_body = $Emails.emails_level_3[email_number]["Email Body"]
+	email_name = $Emails.emails_level_3[email_number]["Sender Name"]
+	email_gift_ideas = $Emails.emails_level_3[email_number]["Email Tags"].split(",")
+	email_happy_item = $Emails.emails_level_3[email_number]["Happy Item"]
+	email_neutral_items = $Emails.emails_level_3[email_number]["Neutral Items"].split(",")
+	#print("email_screen_level_1: gift ideas ", $Emails.emails_level_1[email_number]["Email Tags"])
+	email_fill(email_from, email_to, email_subject, email_body)		
 
 func load_level_2_email(email_number=0):
 	email_from = $Emails.emails_level_2[email_number]["Email Address"]
@@ -83,7 +110,6 @@ func load_level_1_emails(email_number=0):
 	#print("email_screen_level_1: gift ideas ", $Emails.emails_level_1[email_number]["Email Tags"])
 	email_fill(email_from, email_to, email_subject, email_body)
 
-
 func contact_fill():
 	var count = 0
 	var emails
@@ -94,8 +120,10 @@ func contact_fill():
 	elif level == 3:
 		emails = $Emails.emails_level_3
 	#print(contact_buttons)
-	for button in contact_buttons:
-		#print(button)
+	#for button in contact_buttons:
+	for i in range (0, len(emails)):
+		print (contact_buttons)
+		var button = contact_buttons[i]
 		button.get_node("LabelContact").text = emails[count]["Sender Name"]
 		button.get_node("LabelSubject").text = emails[count]["Subject Line"]
 		var profile = "res://Assets/Pic_" + emails[count]["Sender Name"] + str(level) + ".png"

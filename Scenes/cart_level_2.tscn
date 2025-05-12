@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="6_1f18s"]
 [ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="7_jm7wi"]
 
-[node name="Cart" type="Node2D"]
+[node name="Cart" type="Node2D" node_paths=PackedStringArray("image_item")]
 script = ExtResource("1_xnipu")
+image_item = NodePath("ImageItem")
 
 [node name="Tojam25LayoutFile2" type="Sprite2D" parent="."]
 visible = false
@@ -21,25 +22,27 @@ z_index = 1
 position = Vector2(1565, 257)
 
 [node name="TextureButtonCheckout" type="TextureButton" parent="."]
-offset_left = 1520.0
+offset_left = 1510.0
 offset_top = 524.0
-offset_right = 1840.0
+offset_right = 1854.0
 offset_bottom = 620.0
 texture_normal = ExtResource("4_uxklv")
 texture_pressed = ExtResource("5_383xw")
 texture_hover = ExtResource("6_1f18s")
+stretch_mode = 0
 
 [node name="LabelCheckout" type="Label" parent="TextureButtonCheckout"]
 z_index = 1
 layout_mode = 0
-offset_left = 90.0
+offset_left = 80.0
 offset_top = 24.0
-offset_right = 287.0
+offset_right = 330.0
 offset_bottom = 78.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_jm7wi")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 30
 text = "Checkout"
+horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3

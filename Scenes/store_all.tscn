@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1vom0n3rk7kg"]
+
+[ext_resource type="Script" uid="uid://ckwwysco3j5nf" path="res://Scenes/store_all.gd" id="1_thf00"]
+[ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_5sjnn"]
+[ext_resource type="Texture2D" uid="uid://4yequcab6ssp" path="res://Assets/tojam25_cartLayoutRef.png" id="3_jxxmg"]
+[ext_resource type="PackedScene" uid="uid://b13mr6v3x6sdm" path="res://Scenes/sort.tscn" id="4_1df5p"]
+[ext_resource type="PackedScene" uid="uid://b7svf5v4n3r5n" path="res://Scenes/items.tscn" id="5_a7mpq"]
+[ext_resource type="Script" uid="uid://j7v062f6v1bh" path="res://Scenes/scroll_container.gd" id="6_lihnl"]
+[ext_resource type="Texture2D" uid="uid://daryrw2tbnij" path="res://Assets/tojam25_teebuText.png" id="7_jtoyp"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="8_u4nld"]
+
+[node name="Store" type="Node2D"]
+script = ExtResource("1_thf00")
+
+[node name="Tojam25StoreLayout" type="Sprite2D" parent="."]
+position = Vector2(958, 539)
+texture = ExtResource("2_5sjnn")
+
+[node name="Tojam25CartLayoutRef" type="Sprite2D" parent="."]
+position = Vector2(1680, 371)
+texture = ExtResource("3_jxxmg")
+
+[node name="Sort" parent="." instance=ExtResource("4_1df5p")]
+position = Vector2(599, 124)
+
+[node name="Items" parent="." instance=ExtResource("5_a7mpq")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 2
+offset_left = 7.0
+offset_top = 210.0
+offset_right = 1431.0
+offset_bottom = 1072.0
+vertical_scroll_mode = 2
+script = ExtResource("6_lihnl")
+
+[node name="Tojam25TeebuText" type="Sprite2D" parent="."]
+position = Vector2(220, 144)
+texture = ExtResource("7_jtoyp")
+
+[node name="LabelBody" type="Label" parent="."]
+offset_left = 34.0
+offset_top = -30.0
+offset_right = 246.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("8_u4nld")
+theme_override_font_sizes/font_size = 28
+text = "TEEBU"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="LabelContacts" type="Label" parent="."]
+offset_left = 1808.0
+offset_top = 113.0
+offset_right = 1880.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("8_u4nld")
+theme_override_font_sizes/font_size = 28
+text = "1/4"
+horizontal_alignment = 1
+vertical_alignment = 1

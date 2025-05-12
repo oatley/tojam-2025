@@ -11,8 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_t7v2y"]
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_ait6c"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
 script = ExtResource("1_v3rpw")
+level = 2
+screen_store = NodePath("StoreLevel2")
+screen_objectives = NodePath("Objectives")
+screen_cart = NodePath("Cart")
+screen_email = NodePath("EmailScreenLevel2")
+screen_portrait = NodePath("PortraitScreenLevel2")
 
 [node name="StoreLevel2" parent="." instance=ExtResource("2_smnlx")]
 

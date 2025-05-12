@@ -9,3 +9,8 @@ func load_level_1():
 func _on_texture_button_pressed() -> void:
 	load_level_1()
 	pass # Replace with function body.
+
+
+func _on_texture_button_exit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.

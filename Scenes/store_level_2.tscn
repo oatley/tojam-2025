@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy73i6caqvn2n"]
+[gd_scene load_steps=9 format=3 uid="uid://cy73i6caqvn2n"]
 
 [ext_resource type="Script" uid="uid://d33bq4phe5vuf" path="res://Scenes/store_level_2.gd" id="1_nkye0"]
 [ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_uotyo"]
 [ext_resource type="PackedScene" uid="uid://b13mr6v3x6sdm" path="res://Scenes/sort.tscn" id="3_e3aq8"]
+[ext_resource type="Texture2D" uid="uid://4yequcab6ssp" path="res://Assets/tojam25_cartLayoutRef.png" id="3_uotyo"]
 [ext_resource type="PackedScene" uid="uid://b7svf5v4n3r5n" path="res://Scenes/items.tscn" id="4_jjn5s"]
 [ext_resource type="Script" uid="uid://j7v062f6v1bh" path="res://Scenes/scroll_container.gd" id="5_ihx4m"]
 [ext_resource type="Texture2D" uid="uid://daryrw2tbnij" path="res://Assets/tojam25_teebuText.png" id="6_04cht"]
@@ -14,6 +15,10 @@ script = ExtResource("1_nkye0")
 [node name="Tojam25StoreLayout" type="Sprite2D" parent="."]
 position = Vector2(958, 539)
 texture = ExtResource("2_uotyo")
+
+[node name="Tojam25CartLayoutRef" type="Sprite2D" parent="."]
+position = Vector2(1680, 371)
+texture = ExtResource("3_uotyo")
 
 [node name="Sort" parent="." instance=ExtResource("3_e3aq8")]
 position = Vector2(599, 124)

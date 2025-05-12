@@ -27,7 +27,6 @@ func _ready():
 	screen_store.set_label_contacts (str(screen_email.email_contact) + "/" + str(screen_email.email_contacts))
 	pass
 	
-
 func _process (delta):
 	time += delta
 	if time > 0.25:
@@ -37,7 +36,6 @@ func _process (delta):
 			screen_objectives.button_pressed = false
 			screen_objectives.is_email_open = screen_email.is_email_open
 		time = 0
-
 
 func unhide_portrait():
 	screen_store.visible = false
@@ -49,7 +47,6 @@ func unhide_portrait():
 	screen_portrait.unhide_flash()
 	screen_portrait.brightness = 255
 
-	
 # User level to detect 2 or 3
 func game_over(email_outcomes):
 	print(email_outcomes)

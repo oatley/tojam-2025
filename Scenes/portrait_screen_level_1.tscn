@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://v6bj3lynomqp"]
 
 [ext_resource type="Texture2D" uid="uid://bw3sdbbdinp02" path="res://Assets/tojam25_photo1.png" id="1_8xp6f"]
-[ext_resource type="Script" uid="uid://c0syvgssf1mji" path="res://Scenes/portrait_screen_level_1.gd" id="1_xeq12"]
+[ext_resource type="Script" uid="uid://dfxyxpohk431c" path="res://Scenes/portrait_screen_all.gd" id="1_16kuj"]
 [ext_resource type="Texture2D" uid="uid://nj0oj3lrjyl" path="res://Assets/tojam25_photoFace2.png" id="3_xeq12"]
 [ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_16kuj"]
 [ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="5_yxrg1"]
@@ -17,14 +17,14 @@ width = 1920
 height = 1080
 
 [node name="PortraitScreenLevel1" type="Node2D"]
-script = ExtResource("1_xeq12")
+script = ExtResource("1_16kuj")
 
 [node name="TextureRectPortrait" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_8xp6f")
 
-[node name="TextureRectClareFace" type="TextureRect" parent="TextureRectPortrait"]
+[node name="TextureRectClaireFace" type="TextureRect" parent="TextureRectPortrait"]
 visible = false
 layout_mode = 0
 offset_left = 937.0
@@ -36,10 +36,10 @@ texture = ExtResource("3_xeq12")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1538.0
-offset_top = 962.0
-offset_right = 1788.0
-offset_bottom = 1002.0
+offset_left = 1533.0
+offset_top = 44.0
+offset_right = 1853.0
+offset_bottom = 140.0
 texture_normal = ExtResource("4_16kuj")
 texture_pressed = ExtResource("5_yxrg1")
 texture_hover = ExtResource("6_e4svs")
@@ -60,6 +60,7 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="TextureRectFlash" type="TextureRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("GradientTexture2D_howwa")

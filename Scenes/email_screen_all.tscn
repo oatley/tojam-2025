@@ -1,0 +1,495 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqokqfncfd2nh"]
+
+[ext_resource type="Script" uid="uid://cvpunhqciryw0" path="res://Scenes/email_screen_all.gd" id="1_gt1e8"]
+[ext_resource type="Texture2D" uid="uid://bs86oj71qxjtc" path="res://Assets/tojam25_emailLayout.png" id="2_7b4gu"]
+[ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="3_omoac"]
+[ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="4_fkfs2"]
+[ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="5_tnkh1"]
+[ext_resource type="Texture2D" uid="uid://cxslwohbvnbaf" path="res://Assets/tojam25_emailBlock2_Off.png" id="6_2pj5n"]
+[ext_resource type="Texture2D" uid="uid://cftccgdyvwby" path="res://Assets/tojam25_emailBlock2_Over.png" id="7_7xotv"]
+[ext_resource type="Texture2D" uid="uid://bp7u0ucb80686" path="res://Assets/tojam25_emailBlock1_Over.png" id="8_8tawn"]
+[ext_resource type="Texture2D" uid="uid://b1c1if6loi5p0" path="res://Assets/Pic_Claire1.png" id="9_0u7sp"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="10_3jc81"]
+[ext_resource type="FontFile" uid="uid://cby3c4hxa2ie0" path="res://Fonts/pixelfontmedium.ttf" id="11_xjks8"]
+[ext_resource type="Texture2D" uid="uid://dsbrkf7o0d6d1" path="res://Assets/Pic_Claire2.png" id="12_na7fy"]
+[ext_resource type="Texture2D" uid="uid://inkkumrsb03e" path="res://Assets/tojam25_emailLayoutRef.png" id="13_cqwaw"]
+[ext_resource type="PackedScene" uid="uid://1dopslnjq3w3" path="res://Scenes/emails.tscn" id="14_f28ju"]
+
+[node name="EmailScreen" type="Node2D"]
+visibility_layer = 4
+script = ExtResource("1_gt1e8")
+
+[node name="EmailLayout" type="Sprite2D" parent="."]
+visibility_layer = 16
+texture = ExtResource("2_7b4gu")
+centered = false
+
+[node name="TextureButtonExit" type="TextureButton" parent="EmailLayout"]
+z_index = 1
+offset_left = 1718.0
+offset_top = 129.0
+offset_right = 1791.0
+offset_bottom = 202.0
+texture_normal = ExtResource("3_omoac")
+texture_pressed = ExtResource("4_fkfs2")
+texture_hover = ExtResource("5_tnkh1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EmailLayout"]
+offset_left = 128.0
+offset_top = 211.0
+offset_right = 650.0
+offset_bottom = 951.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EmailLayout/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureButtonContact1" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact1"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButtonContact2" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact2"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact2"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("12_na7fy")
+
+[node name="TextureButtonContact3" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact3"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact3"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="TextureButtonContact4" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact4"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact4"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="TextureButtonContact5" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact5"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact5"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact5"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButtonContact6" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact6"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact6"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButtonContact7" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact7"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact7"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact7"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButtonContact8" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact8"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact8"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact8"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButtonContact9" type="TextureButton" parent="EmailLayout/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_2pj5n")
+texture_hover = ExtResource("7_7xotv")
+texture_disabled = ExtResource("8_8tawn")
+
+[node name="TextureRectContact" type="TextureRect" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact9"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 146.0
+texture = ExtResource("9_0u7sp")
+
+[node name="LabelContact" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact9"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 18.0
+offset_right = 437.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3jc81")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout/ScrollContainer/VBoxContainer/TextureButtonContact9"]
+z_index = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 437.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "doooo"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="LabelFrom" type="Label" parent="EmailLayout"]
+offset_left = 813.0
+offset_top = 227.0
+offset_right = 1753.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "Place"
+vertical_alignment = 1
+
+[node name="LabelTo" type="Label" parent="EmailLayout"]
+offset_left = 781.0
+offset_top = 308.0
+offset_right = 1721.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "Place"
+vertical_alignment = 1
+
+[node name="LabelSubject" type="Label" parent="EmailLayout"]
+offset_left = 691.0
+offset_top = 390.0
+offset_right = 1631.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "Place"
+vertical_alignment = 1
+
+[node name="LabelBody3" type="RichTextLabel" parent="EmailLayout"]
+visible = false
+offset_left = 687.0
+offset_top = 477.0
+offset_right = 1775.0
+offset_bottom = 940.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_xjks8")
+theme_override_fonts/bold_font = ExtResource("10_3jc81")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+text = "Test"
+vertical_alignment = 1
+justification_flags = 35
+
+[node name="LabelBody" type="Label" parent="EmailLayout"]
+offset_left = 685.0
+offset_top = 475.0
+offset_right = 1768.0
+offset_bottom = 930.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("11_xjks8")
+theme_override_font_sizes/font_size = 32
+text = "Place"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tojam25EmailLayoutRef" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_cqwaw")
+centered = false
+
+[node name="Emails" parent="." instance=ExtResource("14_f28ju")]
+process_priority = 1
+
+[connection signal="pressed" from="EmailLayout/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

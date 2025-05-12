@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = get_parent().level
+@export var level: int
 var is_email_open = false
 var button_pressed = false
 

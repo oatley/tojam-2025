@@ -36,6 +36,7 @@ texture = ExtResource("3_k14qt")
 expand_mode = 1
 
 [node name="TextureRectLucyFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 884.0
 offset_top = 305.0
 offset_right = 1012.0
@@ -46,6 +47,7 @@ texture = ExtResource("3_k14qt")
 expand_mode = 1
 
 [node name="TextureRectGeorgeFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 1175.0
 offset_top = 254.0
 offset_right = 1303.0
@@ -56,6 +58,7 @@ texture = ExtResource("3_k14qt")
 expand_mode = 1
 
 [node name="TextureRectJeanFace" type="TextureRect" parent="TextureRectPortrait"]
+layout_mode = 0
 offset_left = 707.0
 offset_top = 195.0
 offset_right = 835.0

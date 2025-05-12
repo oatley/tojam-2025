@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg82jvh8jpwiy"]
+
+[ext_resource type="Script" uid="uid://d1tw6pud2rc1o" path="res://Scenes/cart_all.gd" id="1_4m8dd"]
+[ext_resource type="Texture2D" uid="uid://6ppehshicyo7" path="res://Assets/tojam25_layoutFile2.png" id="2_28lq7"]
+[ext_resource type="PackedScene" uid="uid://l5m6lq5yl8kk" path="res://Scenes/image_item.tscn" id="3_tb87a"]
+[ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_klix6"]
+[ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="5_dsi2j"]
+[ext_resource type="Texture2D" uid="uid://y16ynn7iela4" path="res://Assets/tojam25_checkoutButton_Over.png" id="6_cmxvr"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="7_ffws8"]
+
+[node name="Cart" type="Node2D" node_paths=PackedStringArray("image_item")]
+script = ExtResource("1_4m8dd")
+image_item = NodePath("ImageItem")
+
+[node name="Tojam25LayoutFile2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_28lq7")
+centered = false
+
+[node name="ImageItem" parent="." instance=ExtResource("3_tb87a")]
+z_index = 1
+position = Vector2(1565, 257)
+
+[node name="TextureButtonCheckout" type="TextureButton" parent="."]
+offset_left = 1510.0
+offset_top = 524.0
+offset_right = 1854.0
+offset_bottom = 620.0
+texture_normal = ExtResource("4_klix6")
+texture_pressed = ExtResource("5_dsi2j")
+texture_hover = ExtResource("6_cmxvr")
+stretch_mode = 0
+
+[node name="LabelCheckout" type="Label" parent="TextureButtonCheckout"]
+z_index = 1
+layout_mode = 0
+offset_left = 80.0
+offset_top = 24.0
+offset_right = 330.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ffws8")
+theme_override_font_sizes/font_size = 30
+text = "Checkout"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[connection signal="pressed" from="TextureButtonCheckout" to="." method="_on_texture_button_checkout_pressed"]

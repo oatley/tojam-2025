@@ -1,32 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv0gl7qa5pe2e"]
+[gd_scene load_steps=11 format=3 uid="uid://dv0gl7qa5pe2e"]
 
-[ext_resource type="Script" uid="uid://bfy5vx5tcndfm" path="res://Scenes/level_1.gd" id="1_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://c7543ie3r3cy8" path="res://Scenes/email_screen_level_1.tscn" id="2_8ffim"]
-[ext_resource type="PackedScene" uid="uid://fa81qyn4fftf" path="res://Scenes/store_level_1.tscn" id="2_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://d0qmdgj3l5eae" path="res://Scenes/objectives_level_1.tscn" id="4_7p6j4"]
-[ext_resource type="PackedScene" uid="uid://dgxv7ppfg301g" path="res://Scenes/cart_level_1.tscn" id="5_6444e"]
+[ext_resource type="Script" uid="uid://dy55ya5uv71yl" path="res://Scenes/level_all.gd" id="1_chwpn"]
+[ext_resource type="PackedScene" uid="uid://b1vom0n3rk7kg" path="res://Scenes/store_all.tscn" id="2_chwpn"]
+[ext_resource type="PackedScene" uid="uid://bav75o5bblhiw" path="res://Scenes/objectives_all.tscn" id="3_af3po"]
+[ext_resource type="PackedScene" uid="uid://cg82jvh8jpwiy" path="res://Scenes/cart_all.tscn" id="4_chwpn"]
+[ext_resource type="PackedScene" uid="uid://dqokqfncfd2nh" path="res://Scenes/email_screen_all.tscn" id="5_chwpn"]
 [ext_resource type="PackedScene" uid="uid://v6bj3lynomqp" path="res://Scenes/portrait_screen_level_1.tscn" id="6_evi0p"]
 [ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="7_lsmp6"]
+[ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_oovug"]
+[ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_8i23i"]
+[ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_8yhm2"]
 
-[node name="Level1" type="Node2D"]
-script = ExtResource("1_xfk5q")
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
+script = ExtResource("1_chwpn")
+level = 1
+screen_store = NodePath("Store")
+screen_objectives = NodePath("Objectives")
+screen_cart = NodePath("Cart")
+screen_email = NodePath("EmailScreen")
+screen_portrait = NodePath("PortraitScreenLevel1")
 
-[node name="StoreLevel1" parent="." instance=ExtResource("2_xfk5q")]
+[node name="Store" parent="." instance=ExtResource("2_chwpn")]
 z_index = -1
+level = 1
 
-[node name="Objectives" parent="." instance=ExtResource("4_7p6j4")]
+[node name="Objectives" parent="." instance=ExtResource("3_af3po")]
+level = 1
 
-[node name="Cart" parent="." instance=ExtResource("5_6444e")]
+[node name="Cart" parent="." instance=ExtResource("4_chwpn")]
+level = 1
 
-[node name="EmailScreenLevel1" parent="." instance=ExtResource("2_8ffim")]
-visibility_layer = 1
+[node name="EmailScreen" parent="." instance=ExtResource("5_chwpn")]
 z_index = 1
+level = 1
 
 [node name="PortraitScreenLevel1" parent="." instance=ExtResource("6_evi0p")]
 visible = false
+
+[node name="TextureButtonExit" type="TextureButton" parent="."]
+offset_left = 1836.0
+offset_top = 7.0
+offset_right = 1909.0
+offset_bottom = 80.0
+texture_normal = ExtResource("7_oovug")
+texture_pressed = ExtResource("8_8i23i")
+texture_hover = ExtResource("9_8yhm2")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_lsmp6")
 autoplay = true
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

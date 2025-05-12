@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = get_parent().level
+@export var level: int
 
 # Control
 var is_checkout = false
