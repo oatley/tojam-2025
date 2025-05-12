@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_d1ilt"]
 
 [node name="Main" type="Node2D"]
+scale = Vector2(0.667, 0.667)
 script = ExtResource("1_jjgbg")
 
 [node name="Tojam25MainMenu" type="Sprite2D" parent="."]

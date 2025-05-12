@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_8yhm2"]
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
+scale = Vector2(0.667, 0.667)
 script = ExtResource("1_chwpn")
 level = 1
 screen_store = NodePath("Store")
@@ -50,6 +51,8 @@ stretch_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_lsmp6")
+volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
