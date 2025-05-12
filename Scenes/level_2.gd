@@ -8,14 +8,15 @@ var selected_cart_col1
 var selected_cart_col2
 var selected_cart_item_id
 
-var level = 1
+var current_level = 2
+var level = 2
 
 func set_level():
-	$StoreLevel1.level = level
+	$StoreLevel2.level = level
 	$Objectives.level = level
 	$Cart.level = level
-	$EmailScreenLevel1.level = level
-	$PortraitScreenLevel1.level = level
+	$EmailScreenLevel2.level = level
+	$PortraitScreenLevel2.level = level
 
 func _ready():
 	fill_objectives()
@@ -31,20 +32,20 @@ func _process (delta):
 		timecart = 0
 	if time > 0.25:
 		if $Objectives.button_pressed:
-			$EmailScreenLevel1.open_email()
+			$EmailScreenLevel2.open_email()
 			$Objectives.button_pressed = false
-			$Objectives.is_email_open = $EmailScreenLevel1.is_email_open
+			$Objectives.is_email_open = $EmailScreenLevel2.is_email_open
 		time = 0
 
 
 func unhide_portrait():
-	$StoreLevel1.visible = false
+	$StoreLevel2.visible = false
 	$Objectives.visible = false
 	$Cart.visible = false
-	$EmailScreenLevel1.visible = false
-	$PortraitScreenLevel1.visible = true
-	$PortraitScreenLevel1/TextureRectFlash.visible = true
-	$PortraitScreenLevel1.brightness = 255
+	$EmailScreenLevel2.visible = false
+	$PortraitScreenLevel2.visible = true
+	$PortraitScreenLevel2/TextureRectFlash.visible = true
+	$PortraitScreenLevel2.brightness = 255
 	
 
 # email outcomes may be a list or dict
@@ -58,7 +59,7 @@ func game_over_level_1(email_outcomes):
 	
 func checkout():
 	print ("level_1.gd: checkout started")
-	var level = int(level)-1
+	var level = int(current_level)-1
 	var email_outcomes = {}
 	if selected_cart_item_id:
 		# who
@@ -87,15 +88,15 @@ func fill_cart():
 
 
 func fill_objectives():
-	$Objectives/LabelContact.text = $EmailScreenLevel1.email_name
-	$Objectives/LabelSubject.text = $EmailScreenLevel1.email_subject
+	#$Objectives/LabelContact.text = $EmailScreenLevel2.email_name
+	#$Objectives/LabelSubject.text = $EmailScreenLevel2.email_subject
 	var gift_ideas = {	"1": "",
 					 	"2": "", 
 						"3": "",
 						"4": ""
 					}
 	var c = 1
-	for item in $EmailScreenLevel1.email_gift_ideas:
+	for item in $EmailScreenLevel2.email_gift_ideas:
 		gift_ideas[str(c)] = item.strip_edges()
 		#print("level1: item check", item)
 		c+=1

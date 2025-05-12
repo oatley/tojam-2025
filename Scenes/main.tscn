@@ -24,6 +24,7 @@ texture_pressed = ExtResource("4_6bp64")
 texture_hover = ExtResource("5_344ge")
 
 [node name="LabelTitle" type="Label" parent="Tojam25MainMenu/TextureButton"]
+layout_mode = 0
 offset_left = 82.0
 offset_top = 31.0
 offset_right = 289.0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://8aqg38isgn80"]
+
+[ext_resource type="Script" uid="uid://db1kgmho0tocf" path="res://Scenes/level_2.gd" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://cy73i6caqvn2n" path="res://Scenes/store_level_2.tscn" id="2_smnlx"]
+[ext_resource type="PackedScene" uid="uid://d0qmdgj3l5eae" path="res://Scenes/objectives_level_1.tscn" id="3_12fag"]
+[ext_resource type="PackedScene" uid="uid://dqcpjjnvv5lts" path="res://Scenes/cart_level_2.tscn" id="4_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://bethe3wyoxgu3" path="res://Scenes/email_screen_level_2.tscn" id="5_v36qu"]
+[ext_resource type="PackedScene" uid="uid://d3g0fxmtit8d4" path="res://Scenes/portrait_screen_level_2.tscn" id="6_cggpd"]
+[ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="7_055b2"]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_v3rpw")
+
+[node name="StoreLevel2" parent="." instance=ExtResource("2_smnlx")]
+
+[node name="Objectives" parent="." instance=ExtResource("3_12fag")]
+
+[node name="Cart" parent="." instance=ExtResource("4_1q6tm")]
+
+[node name="EmailScreenLevel2" parent="." instance=ExtResource("5_v36qu")]
+z_index = 1
+
+[node name="PortraitScreenLevel2" parent="." instance=ExtResource("6_cggpd")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_055b2")
+autoplay = true

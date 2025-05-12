@@ -12,7 +12,7 @@ var tab_scene = preload("res://Scenes/tab_container.tscn") # Old Scene
 # Shop Items
 var shop_item_scene = preload("res://Scenes/shop_item.tscn")
 
-var level = 1
+var level = 2
 
 # Items
 var items = []
@@ -116,7 +116,7 @@ func create_items(tab, tab_container):
 	for item in items:
 		if not item["First Level Added"]or not item["General Category"] or not item["Specific Category"] or not item["Art Notes"]:
 			continue
-		if item["First Level Added"] != "1":
+		if item["First Level Added"] != str(level):
 			continue
 			
 		if count > 1:
@@ -146,9 +146,9 @@ func create_items(tab, tab_container):
 			if count == 1:
 				#print ("store.gd: item", item)
 				var shop_item_instance = shop_item_scene.instantiate()
-				shop_item_instance.level = level
 				#print ("store.gd: adding shop item", shop_item_instance, "------", item1_body, "-----", item2_body)
 				tab_container.add_child(shop_item_instance)
+				shop_item_instance.level = level
 				
 				# item1 
 				shop_item_instance.change_title(0, item1_title)
@@ -156,7 +156,6 @@ func create_items(tab, tab_container):
 				# button, art_asset, col1, col2
 				shop_item_instance.change_image(0, item1_image_base, item1_image_col1, item1_image_col2)
 				shop_item_instance.change_id(0, item1_id)
-				
 				
 				# item2
 				shop_item_instance.change_title(1, item2_title)

@@ -9,8 +9,8 @@ var main_menu = "res://Scenes/main.tscn"
 # Flash
 var time = 0
 var brightness = 255
-var level = 1
 
+var level = 2
 
 func _process(delta):
 	time += delta

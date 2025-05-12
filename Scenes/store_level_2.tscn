@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy73i6caqvn2n"]
+
+[ext_resource type="Script" uid="uid://d33bq4phe5vuf" path="res://Scenes/store_level_2.gd" id="1_nkye0"]
+[ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_uotyo"]
+[ext_resource type="PackedScene" uid="uid://b13mr6v3x6sdm" path="res://Scenes/sort.tscn" id="3_e3aq8"]
+[ext_resource type="PackedScene" uid="uid://b7svf5v4n3r5n" path="res://Scenes/items.tscn" id="4_jjn5s"]
+[ext_resource type="Script" uid="uid://j7v062f6v1bh" path="res://Scenes/scroll_container.gd" id="5_ihx4m"]
+[ext_resource type="Texture2D" uid="uid://daryrw2tbnij" path="res://Assets/tojam25_teebuText.png" id="6_04cht"]
+[ext_resource type="FontFile" uid="uid://6hqn3o6o7h5n" path="res://Fonts/pixelfontmediumbold.ttf" id="7_61ywb"]
+
+[node name="StoreLevel2" type="Node2D"]
+script = ExtResource("1_nkye0")
+
+[node name="Tojam25StoreLayout" type="Sprite2D" parent="."]
+position = Vector2(958, 539)
+texture = ExtResource("2_uotyo")
+
+[node name="Sort" parent="." instance=ExtResource("3_e3aq8")]
+position = Vector2(599, 124)
+
+[node name="Items" parent="." instance=ExtResource("4_jjn5s")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 2
+offset_left = 7.0
+offset_top = 210.0
+offset_right = 1431.0
+offset_bottom = 1072.0
+vertical_scroll_mode = 2
+script = ExtResource("5_ihx4m")
+
+[node name="Tojam25TeebuText" type="Sprite2D" parent="."]
+position = Vector2(220, 144)
+texture = ExtResource("6_04cht")
+
+[node name="LabelBody" type="Label" parent="."]
+offset_left = 34.0
+offset_top = -30.0
+offset_right = 246.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("7_61ywb")
+theme_override_font_sizes/font_size = 28
+text = "TEEBU"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3

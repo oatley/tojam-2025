@@ -6,7 +6,10 @@ var button2_title# = "title"
 var button1_text#  = "text_body"
 var button2_text# = "text_body"
 
+var level
 
+#func set_level(level):
+	#current_level = level
 #func _ready():
 	#$TextureButton/LabelTitle.text = button1_title
 	#$TextureButton2/LabelTitle.text = button2_title
@@ -68,7 +71,7 @@ func _on_texture_button_pressed() -> void:
 
 
 func _on_texture_button_2_pressed() -> void:
-	var root_node = get_node("/root/Level1")
+	var root_node = get_node("/root/Level"+str(level))
 	root_node.selected_cart_item = $TextureButton2/ImageItem.item_art_asset
 	root_node.selected_cart_col1 = $TextureButton2/ImageItem.item_col1
 	root_node.selected_cart_col2 = $TextureButton2/ImageItem.item_col2

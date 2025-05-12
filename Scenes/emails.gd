@@ -4,6 +4,7 @@ var filename = "email_storage.tsv"
 var data_header = []
 var emails = []
 var emails_level_1 = []
+var emails_level_2 = []
 
 var level = 1
 
@@ -49,8 +50,11 @@ func read_email_file():
 		for email in emails:
 			if email["Level"] == "1":
 				emails_level_1.append(email)
+			if email["Level"] == "2":
+				emails_level_2.append(email)
 		#print(emails_level_1)
 		print("emails.gd: number of emails in level 1: -> ", len(emails_level_1))
+		print("emails.gd: number of emails in level 2: -> ", len(emails_level_2))
 		#print ("items.gd: ", items)
 		#print ("emails.gd: ", emails )
 		print ("emails.gd: data loaded successfully " + filename)
