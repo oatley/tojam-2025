@@ -13,5 +13,5 @@ func change_checkout_image(image):
 func _on_texture_button_checkout_pressed() -> void:
 	is_checkout = true
 	var root_node = get_node("/root/Level2")
-	root_node.checkout()
+	root_node.add_to_cart()
 	pass # Replace with function body.

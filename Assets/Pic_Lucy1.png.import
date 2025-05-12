@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3idqp5m6ubbf"
-path="res://.godot/imported/BoxFlowerCol2.png-16b159c1e58bfb289f931d48b63e0a4f.ctex"
+uid="uid://cfo5hintrfhln"
+path="res://.godot/imported/Pic_Lucy1.png-9546bc2101d82a9ed3dd8c558bb530df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/BoxFlowerCol2.png"
-dest_files=["res://.godot/imported/BoxFlowerCol2.png-16b159c1e58bfb289f931d48b63e0a4f.ctex"]
+source_file="res://Assets/Pic_Lucy1.png"
+dest_files=["res://.godot/imported/Pic_Lucy1.png-9546bc2101d82a9ed3dd8c558bb530df.ctex"]
 
 [params]
 

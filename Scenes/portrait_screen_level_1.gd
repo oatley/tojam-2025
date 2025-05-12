@@ -18,7 +18,7 @@ func _process(delta):
 	if time > 0.05:
 		time = 0
 		#print(time)
-		print ("DOOOT", brightness)
+		#print ("DOOOT", brightness)
 		$TextureRectFlash.modulate = Color.from_rgba8(255,255,255,brightness)
 		brightness -= 10
 		if brightness < 0:

@@ -29,7 +29,7 @@ texture_normal = ExtResource("4_uxklv")
 texture_pressed = ExtResource("5_383xw")
 texture_hover = ExtResource("6_1f18s")
 
-[node name="LabelGiftIdeasTitle" type="Label" parent="TextureButtonCheckout"]
+[node name="LabelCheckout" type="Label" parent="TextureButtonCheckout"]
 z_index = 1
 layout_mode = 0
 offset_left = 90.0

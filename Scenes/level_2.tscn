@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3g0fxmtit8d4" path="res://Scenes/portrait_screen_level_2.tscn" id="6_cggpd"]
 [ext_resource type="AudioStream" uid="uid://t4nlv6ihf6yf" path="res://Audio/Serene Shopping Serenade V2.wav" id="7_055b2"]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_v3rpw")
 
 [node name="StoreLevel2" parent="." instance=ExtResource("2_smnlx")]

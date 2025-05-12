@@ -82,14 +82,6 @@ func create_tabs():
 		create_items(tab, tab_container_instance)
 	pass
 
-	# TO DO
-	# - (DONE) Make sure "Colour 1" and "Colour 2" are all filled in (dolls)
-	# - (DONE) Make sure "Art Asset" leads to file name or put a unique thing in
-	# - (DO THIS IN STORE??) ImageItem contains a dictionary of all colours and resources
-	#	(DONE) This allows you to make an item in store and set everything
-	#	(DONE) requires updating "Art Asset", making dict, 
-	# - (DONE) Fix second item in "shop_item" node, you didn't update it
-
 # Generate item objects inside tabs
 func create_items(tab, tab_container):
 	var count = 0 # put two items in each shop_items_box
@@ -174,40 +166,3 @@ func fill_sort_menu():
 		#print (tab)
 		$Sort/MenuButton.get_popup().add_item(str(tab))
 	pass
-
-# Old tab buttons. No longer use?
-#func create_tabs_OLD():
-	#var posx = 0 # +150 min
-	#var posy = 0 
-	#for category in tab_names:
-		#var instance = tab_scene.instantiate()
-		#instance.name = category
-		#instance.change_text(category)
-		#var posxy = Vector2(posx, posy)
-		#instance.position = posxy
-		#tab_nodes.append (instance)
-		#add_child(instance)
-		#posx += 200
-	#pass
-	
-#func _process (delta):
-	##if not tabs:
-		##if $Items.isReady:
-			##tabs = $Items.item_general_categories
-			###print("store.gd: ", tabs)
-	#pass
-
-#
-#func create_items():
-	#items = $Items.items	
-	#pass
-	
-	
-#func test_create_tabs():
-	#var tab = "Toys"
-	#var tab_container_instance = tab_scene.instantiate()
-	#tab_container_instance.name = str(tab)
-	#tab_nodes.append(tab_container_instance)
-	#$ScrollContainer.add_child(tab_container_instance)
-	#var shop_item_instance = shop_item_scene.instantiate()
-	#tab_container_instance.add_child(shop_item_instance)

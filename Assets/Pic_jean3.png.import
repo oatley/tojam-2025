@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dthd1euk26cla"
-path="res://.godot/imported/BoxFlowerCol1.png-49437e0d310da8691abcd640704bb3e2.ctex"
+uid="uid://bpdfh26c1xvoc"
+path="res://.godot/imported/Pic_jean3.png-7e82c63b4e27b454726d62fabd2b1b43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/BoxFlowerCol1.png"
-dest_files=["res://.godot/imported/BoxFlowerCol1.png-49437e0d310da8691abcd640704bb3e2.ctex"]
+source_file="res://Assets/Pic_jean3.png"
+dest_files=["res://.godot/imported/Pic_jean3.png-7e82c63b4e27b454726d62fabd2b1b43.ctex"]
 
 [params]
 
