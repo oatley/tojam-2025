@@ -8,16 +8,6 @@ var button2_text# = "text_body"
 
 var level
 
-#func set_level(level):
-	#current_level = level
-#func _ready():
-	#$TextureButton/LabelTitle.text = button1_title
-	#$TextureButton2/LabelTitle.text = button2_title
-	#$TextureButton/LabelBody.text = button1_text
-	#$TextureButton2/LabelBody.text = button2_text
-	#print("shop_item.gd: button ready ")
-	#change_body(0, )
-
 func change_image(button, image, col1, col2):
 	if button == 0:
 		$TextureButton/ImageItem.gen_item(image,col1,col2)
@@ -54,21 +44,12 @@ func change_title(button, text):
 		$TextureButton2/LabelTitle.text = button2_title
 	pass
 
-
 func _on_texture_button_pressed() -> void:
 	var root_node = get_node("/root/Level"+str(level))
 	root_node.selected_cart_item = $TextureButton/ImageItem.item_art_asset
 	root_node.selected_cart_col1 = $TextureButton/ImageItem.item_col1
 	root_node.selected_cart_col2 = $TextureButton/ImageItem.item_col2
 	root_node.selected_cart_item_id = $TextureButton/ImageItem.item_id
-	#root_node.selected_cart_item = $TextureButton/ImageItem.image_file_base
-	#root_node.selected_cart_col1 = $TextureButton/ImageItem.image_file_col1
-	#root_node.selected_cart_col2 = $TextureButton/ImageItem.image_file_col2
-	# $TextureButton/ImageItem/TextureRectBase
-	# $TextureButton/ImageItem/TextureRectCol1
-	# $TextureButton/ImageItem/TextureRectCol2
-
-
 
 func _on_texture_button_2_pressed() -> void:
 	var root_node = get_node("/root/Level"+str(level))
@@ -76,6 +57,3 @@ func _on_texture_button_2_pressed() -> void:
 	root_node.selected_cart_col1 = $TextureButton2/ImageItem.item_col1
 	root_node.selected_cart_col2 = $TextureButton2/ImageItem.item_col2
 	root_node.selected_cart_item_id = $TextureButton2/ImageItem.item_id
-	#root_node.selected_cart_item = $TextureButton/ImageItem.image_file_base
-	#root_node.selected_cart_col1 = $TextureButton/ImageItem.image_file_col1
-	#root_node.selected_cart_col2 = $TextureButton/ImageItem.image_file_col2

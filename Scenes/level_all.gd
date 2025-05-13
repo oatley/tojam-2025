@@ -46,23 +46,12 @@ func unhide_portrait():
 	screen_portrait.visible = true
 	screen_portrait.unhide_flash()
 
-# User level to detect 2 or 3
+# Update portrait faces and unhide the portrait screen
 func game_over(email_outcomes):
-	print(email_outcomes)
 	for sender in email_outcomes.keys():
-		print(sender)
-		print (email_outcomes[sender])
 		# Change portrait face for current level
 		screen_portrait.change_face(sender, email_outcomes[sender])
 	unhide_portrait()
-
-# email outcomes may be a list or dict
-#func game_over_level_1(email_outcomes):
-	#for sender in email_outcomes.keys():
-		#print(sender)
-		#print (email_outcomes[sender])
-		#$PortraitScreenLevel1.change_face(sender, email_outcomes[sender])
-	#unhide_portrait()
 	
 func add_email_outcome():
 	var emails = screen_email.get_emails(level)
@@ -78,17 +67,25 @@ func add_email_outcome():
 	else:
 		email_outcomes[sender_name] = "sad"
 	
+# Clear item from cart
+func clear_item_from_cart():
+		screen_cart.image_item.hide_item()
+		selected_cart_item_id = ""
+		selected_cart_item = ""
+		selected_cart_col1 = ""
+		selected_cart_col2 = ""
+		
 # Checkout button to see if you are done the level or more contacts
 func add_to_cart():
 	# Check if no item selected
 	if not selected_cart_item_id:
-		print ("level_",level,".gd: no item in cart")
+		print ("level_all.gd: no item in cart")
 		return
 	
-	# Store how well you did choosing the right/wrong gift
+	# More contacts
 	if (screen_email.email_contacts-1) != screen_email.email_contact:
 		add_email_outcome()
-		print("level_all.g: add to cart ", email_outcomes)
+		print("level_all.gd: add to cart ", email_outcomes)
 		for key in email_outcomes:
 			screen_email.hide_contact_button ()
 		screen_email.email_contact += 1
@@ -96,9 +93,10 @@ func add_to_cart():
 		screen_email.load_emails()
 		fill_objectives()
 		screen_store.set_label_contacts (str(screen_email.email_contact) + "/" + str(screen_email.email_contacts))
-	else:
+		clear_item_from_cart()
+	else: # No more contacts, show portrait screen
 		add_email_outcome()
-		print("level_all.g: add to cart ", email_outcomes)
+		print("level_all.gd: checkout ", email_outcomes)
 		checkout()
 	
 func checkout():

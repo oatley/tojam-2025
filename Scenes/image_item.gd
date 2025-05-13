@@ -25,7 +25,7 @@ var pink = Color.from_rgba8 (254, 72, 222, alpha)
 var brown = Color.from_rgba8(81, 48, 2, alpha)
 #var white = Color.from_rgba8(237, 233, 218, alpha) # Old bad white
 var white = Color.from_rgba8(255, 237, 212, alpha)
-var black = Color.from_rgba8(0, 0, 0, alpha)
+var black = Color.from_rgba8(64, 64, 64, alpha)
 # Pastel colours
 var light_red = Color.from_rgba8(204, 138, 138, alpha)
 var light_orange = Color.from_rgba8(255, 184, 128, alpha)
@@ -36,6 +36,8 @@ var light_purple = Color.from_rgba8(203, 128, 238, alpha)
 var light_pink = Color.from_rgba8(255, 164, 239, alpha)
 # Metals
 var silver = Color.from_rgba8(100, 164, 164, alpha)
+var gold = Color.from_rgba8(254, 184, 84, alpha)
+
 
 # Match string to colours
 var colour_dict = {	"Red": red,
@@ -56,12 +58,18 @@ var colour_dict = {	"Red": red,
 					"Light Purple": light_purple,
 					"Light Pink": light_pink, 
 					"Silver": silver,
+					"Gold": gold,
 					"None": white}
+
+func hide_item():
+	self.visible = false
+
+func unhide_item():
+	self.visible = true
 
 # This should set all filenames
 func gen_item(image, col1, col2):
 	item_art_asset = image
-	
 	# Generate the base image filename
 	gen_base_file(image)	
 	
@@ -91,6 +99,9 @@ func gen_item(image, col1, col2):
 	else:
 		$TextureRectColour2.visible = false
 		
+	# Unhide the item		
+	unhide_item()
+
 # Load texture for base file when passed a string with the art asset name
 func gen_base_file(image):
 	image_file_base = image + "Base.png"
