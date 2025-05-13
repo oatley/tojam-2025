@@ -77,7 +77,7 @@ func load_emails ():
 		load_level_2_email(email_contact)
 	elif level == 3:
 		load_level_3_email(email_contact)	
-	$EmailLayout.visible = true
+	#$EmailLayout.visible = true # Let the delay turn it on
 
 func load_level_3_email(email_number=0):
 	email_from = $Emails.emails_level_3[email_number]["Email Address"]
@@ -139,12 +139,17 @@ func contact_fill():
 		button.get_node("LabelSubject").text = emails[count]["Subject Line"]
 		var profile = "res://Assets/Pic_" + emails[count]["Sender Name"] + str(level) + ".png"
 		button.get_node("TextureRectContact").texture = load(profile)
+		# The main selected contact
 		if count == email_contact:
 			button.texture_normal = email_block_enabled_off
-			button.texture_hover = email_block_enabled_over
-		else:
+			button.texture_hover = email_block_enabled_off
+			#button.texture_normal = email_block_enabled_off
+			#button.texture_hover = email_block_enabled_over
+		else: # Disabled contact
 			button.texture_normal = email_block_disabled_off
-			button.texture_hover = email_block_disabled_over
+			#button.texture_normal = email_block_disabled_off
+			button.texture_hover = email_block_disabled_off
+			#button.texture_hover = email_block_disabled_over
 		#button.tooltip_text = emails[count]["Email Address"]
 		count += 1
 
@@ -164,5 +169,7 @@ func open_email():
 	
 
 func _on_texture_button_exit_pressed() -> void:
+	var root_node = get_node("/root/Level"+str(level))
+	root_node.sound_click.play()
 	$EmailLayout.visible = false
 	pass # Replace with function body.

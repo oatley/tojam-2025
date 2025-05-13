@@ -30,7 +30,9 @@ func _process(delta):
 func hide_flash():
 	$TextureRectFlash.visible = false
 
-func unhide_flash():		
+func unhide_flash():
+	var root_node = get_parent()
+	root_node.sound_camera.play()		
 	$TextureRectFlash.visible = true	
 	$TextureRectFlash.modulate = Color.from_rgba8(255,255,255,brightness)
 	

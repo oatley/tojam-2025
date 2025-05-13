@@ -2,6 +2,7 @@ extends Node2D
 
 @export var level: int
 var current_level = level
+var main_menu = "res://Scenes/main.tscn"
 
 var time = 0
 var timecart = 0
@@ -18,6 +19,12 @@ var selected_cart_item_id
 @export var screen_email : Node2D
 @export var screen_portrait : Node2D
 
+# Sound Effects
+@export var sound_click: AudioStreamPlayer
+@export var sound_email: AudioStreamPlayer
+@export var sound_camera: AudioStreamPlayer
+@export var sound_cash: AudioStreamPlayer
+
 # For portraits
 var email_outcomes = {}
 var email_outcome_index = 0
@@ -32,6 +39,7 @@ func _process (delta):
 	if time > 0.25:
 		fill_cart()
 		if screen_objectives.button_pressed:
+			sound_email.play()
 			screen_email.open_email()
 			screen_objectives.button_pressed = false
 			screen_objectives.is_email_open = screen_email.is_email_open
@@ -93,6 +101,7 @@ func add_to_cart():
 		screen_email.load_emails()
 		fill_objectives()
 		screen_store.set_label_contacts (str(screen_email.email_contact) + "/" + str(screen_email.email_contacts))
+		screen_objectives.button_pressed = true # This will force a delayed open of the email screen
 		clear_item_from_cart()
 	else: # No more contacts, show portrait screen
 		add_email_outcome()
@@ -144,13 +153,17 @@ func fill_objectives():
 	screen_objectives.set_gift_objective("4", gift_ideas["4"])
 	pass
 	
+func load_main_menu():
+	get_tree().change_scene_to_file(main_menu)
 
-
+# Loop the background music
 func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play()
-	pass # Replace with function body.
 
-
+# Clicking the X button in the corner of the screen
 func _on_texture_button_exit_pressed() -> void:
-	get_tree().quit()
-	pass # Replace with function body.
+	load_main_menu()
+
+# Exit button click
+func _on_texture_button_exit_button_down() -> void:
+	sound_click.play()

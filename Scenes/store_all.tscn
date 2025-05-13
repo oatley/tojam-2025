@@ -22,6 +22,7 @@ position = Vector2(1680, 371)
 texture = ExtResource("3_jxxmg")
 
 [node name="Sort" parent="." instance=ExtResource("4_1df5p")]
+visible = false
 position = Vector2(599, 124)
 
 [node name="Items" parent="." instance=ExtResource("5_a7mpq")]
@@ -74,5 +75,17 @@ offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("8_u4nld")
 theme_override_font_sizes/font_size = 28
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAll" type="Label" parent="."]
+offset_left = 602.0
+offset_top = 111.0
+offset_right = 674.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_u4nld")
+theme_override_font_sizes/font_size = 28
+text = "All"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bme7qhtl368qf"]
+[gd_scene load_steps=11 format=3 uid="uid://bme7qhtl368qf"]
 
 [ext_resource type="Script" uid="uid://bcbqp56bmcji4" path="res://Scenes/main_menu.gd" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://bb0si1s751yj6" path="res://Assets/tojam25_mainMenu.png" id="2_bo1nx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_d1ilt"]
+[ext_resource type="AudioStream" uid="uid://cgdc253p8r7ry" path="res://Audio/mouse-click-290204.mp3" id="10_hptm8"]
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.667, 0.667)
@@ -53,5 +54,11 @@ texture_hover = ExtResource("9_d1ilt")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="AudioStreamPlayerButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hptm8")
+volume_db = -10.0
+
+[connection signal="button_down" from="Tojam25MainMenu/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="pressed" from="Tojam25MainMenu/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="button_down" from="Tojam25MainMenu/TextureButtonExit" to="." method="_on_texture_button_exit_button_down"]
 [connection signal="pressed" from="Tojam25MainMenu/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

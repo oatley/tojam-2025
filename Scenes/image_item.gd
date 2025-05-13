@@ -35,7 +35,8 @@ var light_blue = Color.from_rgba8(128, 181, 218, alpha)
 var light_purple = Color.from_rgba8(203, 128, 238, alpha)
 var light_pink = Color.from_rgba8(255, 164, 239, alpha)
 # Metals
-var silver = Color.from_rgba8(100, 164, 164, alpha)
+#var silver = Color.from_rgba8(100, 164, 164, alpha) # Old bad silver
+var silver = Color.from_rgba8(178, 210, 210, alpha)
 var gold = Color.from_rgba8(254, 184, 84, alpha)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv0gl7qa5pe2e"]
+[gd_scene load_steps=15 format=3 uid="uid://dv0gl7qa5pe2e"]
 
 [ext_resource type="Script" uid="uid://dy55ya5uv71yl" path="res://Scenes/level_all.gd" id="1_chwpn"]
 [ext_resource type="PackedScene" uid="uid://b1vom0n3rk7kg" path="res://Scenes/store_all.tscn" id="2_chwpn"]
@@ -10,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dhnd0jonsdu0x" path="res://Assets/tojam25_xButton_Off.png" id="7_oovug"]
 [ext_resource type="Texture2D" uid="uid://btuucpnv1m6uk" path="res://Assets/tojam25_xButton_On.png" id="8_8i23i"]
 [ext_resource type="Texture2D" uid="uid://dxu2fpmf8rdhn" path="res://Assets/tojam25_xButton_Over.png" id="9_8yhm2"]
+[ext_resource type="AudioStream" uid="uid://cgdc253p8r7ry" path="res://Audio/mouse-click-290204.mp3" id="11_af3po"]
+[ext_resource type="AudioStream" uid="uid://c8fg51bvadc4m" path="res://Audio/new-notification-3-323602.mp3" id="12_6ioyp"]
+[ext_resource type="AudioStream" uid="uid://omcsjobanwj6" path="res://Audio/camera-13695.mp3" id="13_oovug"]
+[ext_resource type="AudioStream" uid="uid://c517waxd6roq2" path="res://Audio/CashRegister.wav" id="14_8i23i"]
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait")]
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait", "sound_click", "sound_email", "sound_camera", "sound_cash")]
 scale = Vector2(0.667, 0.667)
 script = ExtResource("1_chwpn")
 level = 1
@@ -20,6 +24,21 @@ screen_objectives = NodePath("Objectives")
 screen_cart = NodePath("Cart")
 screen_email = NodePath("EmailScreen")
 screen_portrait = NodePath("PortraitScreenLevel1")
+sound_click = NodePath("AudioStreamPlayerClick")
+sound_email = NodePath("AudioStreamPlayerEmail")
+sound_camera = NodePath("AudioStreamPlayerCamera")
+sound_cash = NodePath("AudioStreamPlayerCash")
+
+[node name="TextureButtonExit" type="TextureButton" parent="."]
+offset_left = 1836.0
+offset_top = 7.0
+offset_right = 1909.0
+offset_bottom = 80.0
+texture_normal = ExtResource("7_oovug")
+texture_pressed = ExtResource("8_8i23i")
+texture_hover = ExtResource("9_8yhm2")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Store" parent="." instance=ExtResource("2_chwpn")]
 z_index = -1
@@ -38,21 +57,27 @@ level = 1
 [node name="PortraitScreenLevel1" parent="." instance=ExtResource("6_evi0p")]
 visible = false
 
-[node name="TextureButtonExit" type="TextureButton" parent="."]
-offset_left = 1836.0
-offset_top = 7.0
-offset_right = 1909.0
-offset_bottom = 80.0
-texture_normal = ExtResource("7_oovug")
-texture_pressed = ExtResource("8_8i23i")
-texture_hover = ExtResource("9_8yhm2")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_lsmp6")
 volume_db = -20.0
 autoplay = true
 
+[node name="AudioStreamPlayerClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_af3po")
+volume_db = -10.0
+
+[node name="AudioStreamPlayerEmail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6ioyp")
+volume_db = -10.0
+
+[node name="AudioStreamPlayerCamera" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_oovug")
+volume_db = -10.0
+
+[node name="AudioStreamPlayerCash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_8i23i")
+volume_db = -10.0
+
+[connection signal="button_down" from="TextureButtonExit" to="." method="_on_texture_button_exit_button_down"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

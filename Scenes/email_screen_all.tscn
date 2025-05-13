@@ -19,13 +19,15 @@
 visibility_layer = 4
 script = ExtResource("1_gt1e8")
 
-[node name="EmailLayout" type="Sprite2D" parent="."]
-visibility_layer = 16
+[node name="EmailLayout" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("2_7b4gu")
-centered = false
 
 [node name="TextureButtonExit" type="TextureButton" parent="EmailLayout"]
 z_index = 1
+layout_mode = 0
 offset_left = 1718.0
 offset_top = 129.0
 offset_right = 1791.0
@@ -37,6 +39,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="EmailLayout"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 211.0
 offset_right = 650.0
@@ -424,6 +427,7 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="LabelFrom" type="Label" parent="EmailLayout"]
+layout_mode = 0
 offset_left = 813.0
 offset_top = 227.0
 offset_right = 1753.0
@@ -435,6 +439,7 @@ text = "Place"
 vertical_alignment = 1
 
 [node name="LabelTo" type="Label" parent="EmailLayout"]
+layout_mode = 0
 offset_left = 781.0
 offset_top = 308.0
 offset_right = 1721.0
@@ -446,6 +451,7 @@ text = "Place"
 vertical_alignment = 1
 
 [node name="LabelSubject" type="Label" parent="EmailLayout"]
+layout_mode = 0
 offset_left = 691.0
 offset_top = 390.0
 offset_right = 1631.0
@@ -457,6 +463,7 @@ text = "Place"
 vertical_alignment = 1
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="EmailLayout"]
+layout_mode = 0
 offset_left = 684.0
 offset_top = 475.0
 offset_right = 1774.0
@@ -475,6 +482,12 @@ theme_override_font_sizes/font_size = 32
 text = "Place"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="EmailLayoutOld" type="Sprite2D" parent="."]
+visible = false
+visibility_layer = 16
+texture = ExtResource("2_7b4gu")
+centered = false
 
 [node name="Tojam25EmailLayoutRef" type="Sprite2D" parent="."]
 visible = false
