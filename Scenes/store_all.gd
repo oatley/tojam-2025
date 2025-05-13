@@ -50,7 +50,14 @@ func _ready():
 
 func set_label_contacts(text):
 	$LabelContacts.text = text
-	$LabelLevel.text = str(level)
+	var year
+	if level == 1:
+		year = "Mar 17, 1990"
+	elif level == 2:
+		year = "Dec 05, 1996"
+	else:
+		year = "Nov 29, 2021"
+	$LabelLevel.text = year
 
 func set_label_body(text):
 	$LabelBody.text = text
