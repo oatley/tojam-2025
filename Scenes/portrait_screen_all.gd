@@ -17,7 +17,7 @@ var brightness = 255
 func _process(delta):
 	time += delta
 	#print(time)
-	if time > 0.05:
+	if time > 0.05 and self.visible:
 		time = 0
 		#print(time)
 		#print ("DOOOT", brightness)
@@ -30,8 +30,10 @@ func _process(delta):
 func hide_flash():
 	$TextureRectFlash.visible = false
 
-func unhide_flash():			
-	$TextureRectFlash.visible = true
+func unhide_flash():		
+	$TextureRectFlash.visible = true	
+	$TextureRectFlash.modulate = Color.from_rgba8(255,255,255,brightness)
+	
 
 func change_face(sender, face):
 	var current_face

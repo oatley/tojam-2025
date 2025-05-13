@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cg82jvh8jpwiy"]
 
 [ext_resource type="Script" uid="uid://d1tw6pud2rc1o" path="res://Scenes/cart_all.gd" id="1_4m8dd"]
-[ext_resource type="Texture2D" uid="uid://6ppehshicyo7" path="res://Assets/tojam25_layoutFile2.png" id="2_28lq7"]
+[ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_4m8dd"]
 [ext_resource type="PackedScene" uid="uid://l5m6lq5yl8kk" path="res://Scenes/image_item.tscn" id="3_tb87a"]
 [ext_resource type="Texture2D" uid="uid://cgvrg074yvwcs" path="res://Assets/tojam25_checkoutButton_Off.png" id="4_klix6"]
 [ext_resource type="Texture2D" uid="uid://bm7u6t622k4la" path="res://Assets/tojam25_checkoutButton_On.png" id="5_dsi2j"]
@@ -14,7 +14,7 @@ image_item = NodePath("ImageItem")
 
 [node name="Tojam25LayoutFile2" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_28lq7")
+texture = ExtResource("2_4m8dd")
 centered = false
 
 [node name="ImageItem" parent="." instance=ExtResource("3_tb87a")]

@@ -17,6 +17,7 @@ position = Vector2(958, 539)
 texture = ExtResource("2_5sjnn")
 
 [node name="Tojam25CartLayoutRef" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1680, 371)
 texture = ExtResource("3_jxxmg")
 

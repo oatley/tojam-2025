@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bav75o5bblhiw"]
 
 [ext_resource type="Script" uid="uid://dsypl81a3agd6" path="res://Scenes/objectives_all.gd" id="1_6o3xu"]
-[ext_resource type="Texture2D" uid="uid://qk2s6be5ldws" path="res://Assets/tojam25_layoutRef1.png" id="2_bcsda"]
+[ext_resource type="Texture2D" uid="uid://c5soxlipaaell" path="res://Assets/tojam25_storeLayout.png" id="2_6o3xu"]
 [ext_resource type="Texture2D" uid="uid://7vdxv4oi47vf" path="res://Assets/tojam25_emailButton_Off.png" id="3_lcaot"]
 [ext_resource type="Texture2D" uid="uid://bln6h5xve55at" path="res://Assets/tojam25_emailButton_On.png" id="4_2aojr"]
 [ext_resource type="Texture2D" uid="uid://bmkmw48c1cyco" path="res://Assets/tojam25_emailButton_Over.png" id="5_qddfn"]
@@ -14,17 +14,19 @@ script = ExtResource("1_6o3xu")
 
 [node name="Tojam25LayoutRef1" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_bcsda")
+texture = ExtResource("2_6o3xu")
 centered = false
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1773.0
-offset_top = 658.0
-offset_right = 1901.0
-offset_bottom = 786.0
+offset_left = 1785.0
+offset_top = 713.0
+offset_right = 1905.0
+offset_bottom = 833.0
 texture_normal = ExtResource("3_lcaot")
 texture_pressed = ExtResource("4_2aojr")
 texture_hover = ExtResource("5_qddfn")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ProfilePic" type="Sprite2D" parent="."]
 position = Vector2(1517, 724)

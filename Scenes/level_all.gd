@@ -45,7 +45,6 @@ func unhide_portrait():
 	$TextureButtonExit.visible = false
 	screen_portrait.visible = true
 	screen_portrait.unhide_flash()
-	screen_portrait.brightness = 255
 
 # User level to detect 2 or 3
 func game_over(email_outcomes):
@@ -58,12 +57,12 @@ func game_over(email_outcomes):
 	unhide_portrait()
 
 # email outcomes may be a list or dict
-func game_over_level_1(email_outcomes):
-	for sender in email_outcomes.keys():
-		print(sender)
-		print (email_outcomes[sender])
-		$PortraitScreenLevel1.change_face(sender, email_outcomes[sender])
-	unhide_portrait()
+#func game_over_level_1(email_outcomes):
+	#for sender in email_outcomes.keys():
+		#print(sender)
+		#print (email_outcomes[sender])
+		#$PortraitScreenLevel1.change_face(sender, email_outcomes[sender])
+	#unhide_portrait()
 	
 func add_email_outcome():
 	var emails = screen_email.get_emails(level)
@@ -81,13 +80,10 @@ func add_email_outcome():
 	
 # Checkout button to see if you are done the level or more contacts
 func add_to_cart():
-	
 	# Check if no item selected
 	if not selected_cart_item_id:
 		print ("level_",level,".gd: no item in cart")
 		return
-	
-	# Prepare emails
 	
 	# Store how well you did choosing the right/wrong gift
 	if (screen_email.email_contacts-1) != screen_email.email_contact:
@@ -108,7 +104,7 @@ func add_to_cart():
 func checkout():
 	print ("level_",level,".gd: checkout started")
 	if level == 1:
-		game_over_level_1(email_outcomes)
+		game_over(email_outcomes)
 	elif level == 2:
 		game_over(email_outcomes)
 	elif level == 3:
@@ -122,7 +118,6 @@ func fill_cart():
 		screen_cart.set_checkout_label("Checkout")
 	else:
 		screen_cart.set_checkout_label("Add To Cart")
-	
 	
 func fill_objectives():
 	#$Objectives/LabelContact.text = $EmailScreenLevel2.email_name
