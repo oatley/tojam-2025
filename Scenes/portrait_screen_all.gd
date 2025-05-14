@@ -16,7 +16,11 @@ var brightness = 255
 
 func _process(delta):
 	time += delta
-	#print(time)
+	
+	#if get_parent().screen_black.alpha >= get_parent().screen_black.default_alpha + 50:
+	#if get_parent().screen_black.time >= get_parent().screen_black.default_time:
+		#pass
+	
 	if time > 0.05 and self.visible:
 		time = 0
 		#print(time)
@@ -25,7 +29,7 @@ func _process(delta):
 		brightness -= 10
 		if brightness < 0:
 			$TextureRectFlash.visible = false
-			
+	
 			
 func hide_flash():
 	$TextureRectFlash.visible = false
@@ -66,13 +70,20 @@ func load_current_level():
 	get_tree().change_scene_to_file("res://Scenes/level_"+ str(level) +".tscn")
 	pass
 
-func _on_texture_button_pressed() -> void:
+func load_level():
 	if level == 3:
 		load_main_menu()
 	else:
 		load_next_level()
-	pass # Replace with function body.
+
+func black_screen_fade():
+	get_parent().screen_black.portrait = true
+	get_parent().screen_black.start = false
+
+func _on_texture_button_pressed() -> void:
+	load_level()
+	#black_screen_fade()
+	
 
 func _on_texture_button_2_pressed() -> void:
 	load_current_level()
-	pass # Replace with function body.

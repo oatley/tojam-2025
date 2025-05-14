@@ -4,8 +4,13 @@ extends Node2D
 var current_level = level
 var main_menu = "res://Scenes/main.tscn"
 
+# Control
 var time = 0
 var timecart = 0
+var black_screen_time = 0
+
+# black screen fade/time switch
+var fade_alpha_time
 
 var selected_cart_item
 var selected_cart_col1
@@ -18,6 +23,7 @@ var selected_cart_item_id
 @export var screen_cart : Node2D
 @export var screen_email : Node2D
 @export var screen_portrait : Node2D
+@export var screen_black : Node2D
 
 # Sound Effects
 @export var sound_click: AudioStreamPlayer
@@ -32,18 +38,28 @@ var email_outcome_index = 0
 func _ready():
 	fill_objectives()
 	screen_store.set_label_contacts ("0/" + str(screen_email.email_contacts))
-	pass
 	
 func _process (delta):
 	time += delta
+	black_screen_time += delta
+	
+	if black_screen_time > 0.1:
+		screen_black.screen_control()
+	
 	if time > 0.25:
 		fill_cart()
-		if screen_objectives.button_pressed:
+			
+		if screen_objectives.button_pressed and screen_black.alpha <= 0:
+		#if screen_objectives.button_pressed and screen_black.time <= 0:
+			screen_black.start = false
+			screen_black.portrait = false
+			#screen_black.visible = false
 			sound_email.play()
 			screen_email.open_email()
 			screen_objectives.button_pressed = false
 			screen_objectives.is_email_open = screen_email.is_email_open
 		time = 0
+		
 
 func unhide_portrait():
 	screen_store.visible = false

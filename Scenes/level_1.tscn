@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dv0gl7qa5pe2e"]
+[gd_scene load_steps=16 format=3 uid="uid://dv0gl7qa5pe2e"]
 
 [ext_resource type="Script" uid="uid://dy55ya5uv71yl" path="res://Scenes/level_all.gd" id="1_chwpn"]
 [ext_resource type="PackedScene" uid="uid://b1vom0n3rk7kg" path="res://Scenes/store_all.tscn" id="2_chwpn"]
@@ -14,8 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://c8fg51bvadc4m" path="res://Audio/new-notification-3-323602.mp3" id="12_6ioyp"]
 [ext_resource type="AudioStream" uid="uid://omcsjobanwj6" path="res://Audio/camera-13695.mp3" id="13_oovug"]
 [ext_resource type="AudioStream" uid="uid://c517waxd6roq2" path="res://Audio/CashRegister.wav" id="14_8i23i"]
+[ext_resource type="PackedScene" uid="uid://crfrbta5qivc6" path="res://Scenes/black_screen.tscn" id="15_oovug"]
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait", "sound_click", "sound_email", "sound_camera", "sound_cash")]
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("screen_store", "screen_objectives", "screen_cart", "screen_email", "screen_portrait", "screen_black", "sound_click", "sound_email", "sound_camera", "sound_cash")]
 scale = Vector2(0.667, 0.667)
 script = ExtResource("1_chwpn")
 level = 1
@@ -24,6 +25,7 @@ screen_objectives = NodePath("Objectives")
 screen_cart = NodePath("Cart")
 screen_email = NodePath("EmailScreen")
 screen_portrait = NodePath("PortraitScreenLevel1")
+screen_black = NodePath("BlackScreen")
 sound_click = NodePath("AudioStreamPlayerClick")
 sound_email = NodePath("AudioStreamPlayerEmail")
 sound_camera = NodePath("AudioStreamPlayerCamera")
@@ -77,6 +79,9 @@ volume_db = -10.0
 [node name="AudioStreamPlayerCash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_8i23i")
 volume_db = -10.0
+
+[node name="BlackScreen" parent="." instance=ExtResource("15_oovug")]
+level = 1
 
 [connection signal="button_down" from="TextureButtonExit" to="." method="_on_texture_button_exit_button_down"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
