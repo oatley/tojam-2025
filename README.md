@@ -1,4 +1,4 @@
-# tojam-2025
+# Fred and Family - Teebu Troubles
 
 Help Fred buy gifts on Teebu for his ever growing family. The more he has, the worse it gets!
 
@@ -20,3 +20,4 @@ Credits:
 - SFX: Pixabay
 
 Download at: https://shramper.itch.io/fred-family-teebu-troubles
+
